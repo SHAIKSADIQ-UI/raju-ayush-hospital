@@ -1,0 +1,96 @@
+
+/* Mobile Menu */
+@media (max-width: 979px) {
+    .wh-mobile-toggle {
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        border: none;
+        background: none;
+        cursor: pointer;
+        z-index: 100001;
+        padding: 0;
+    }
+    .wh-mobile-toggle span {
+        display: block;
+        width: 24px;
+        height: 2px;
+        background: #333;
+        position: relative;
+        transition: all 0.3s ease;
+    }
+    .wh-mobile-toggle span::before,
+    .wh-mobile-toggle span::after {
+        content: '';
+        position: absolute;
+        width: 24px;
+        height: 2px;
+        background: #333;
+        left: 0;
+        transition: all 0.3s ease;
+    }
+    .wh-mobile-toggle span::before { top: -7px; }
+    .wh-mobile-toggle span::after { top: 7px; }
+    .wh-mobile-toggle.active span { background: transparent; }
+    .wh-mobile-toggle.active span::before { top: 0; transform: rotate(45deg); background: #333; }
+    .wh-mobile-toggle.active span::after { top: 0; transform: rotate(-45deg); background: #333; }
+
+    /* Hide all Wix internal nav elements on mobile */
+    ._root_12ho9_1,
+    ._root_107ew_1,
+    .scroll-button,
+    ._openButtonNavigation_15sgs_79,
+    .hamburger-open-button,
+    ._root_hx4l0_1 {
+        display: none !important;
+    }
+
+    /* Navbar UL - hidden by default on mobile */
+    .custom-navbar,
+    ._container_s6hzk_173 {
+        display: none !important;
+        position: fixed !important;
+        top: 65px !important;
+        left: 0 !important;
+        right: 0 !important;
+        bottom: 0 !important;
+        background: #fff !important;
+        flex-direction: column !important;
+        padding: 20px !important;
+        z-index: 99998 !important;
+        overflow-y: auto !important;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.15) !important;
+    }
+    
+    .custom-navbar.mobile-open,
+    ._container_s6hzk_173.mobile-open {
+        display: flex !important;
+    }
+
+    ._listItem_1ev60_1 {
+        display: block !important;
+        width: 100% !important;
+    }
+    ._label_1ev60_18 {
+        padding: 14px 16px !important;
+        font-size: 17px !important;
+        display: block !important;
+        border-bottom: 1px solid #f0f0f0;
+    }
+    .appointment-btn {
+        margin: 15px 16px !important;
+        text-align: center !important;
+        display: block !important;
+    }
+    .dropdown-content {
+        position: static !important;
+        box-shadow: none !important;
+        padding: 0 0 0 20px !important;
+    }
+}
+
+@media (min-width: 980px) {
+    .wh-mobile-toggle { display: none !important; }
+}

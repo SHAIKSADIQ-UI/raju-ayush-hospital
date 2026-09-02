@@ -1,0 +1,1197 @@
+/* =========================================================
+   RAJU AYUSH – FLOATING WHITE NAVBAR
+   ========================================================= */
+
+:root {
+    --ah-green: #0e6937;
+    --ah-green-deep: #083f24;
+    --ah-cream: #f7f3e8;
+    --ah-mint: #eef7de;
+    --ah-header-bg: rgba(7, 44, 24, 0.72);
+    --ah-lime: #bee356;
+    --ah-text: #1b2d24;
+    --ah-line: #e6eee6;
+    --ah-logo-bg: rgba(255, 255, 255, 0.78);
+    --ah-blue: #0041a6;
+    --ah-blue-dark: #003080;
+    --ah-blue-light: #eaf1fb;
+    --ah-blue-glow: rgba(0, 65, 166, 0.25);
+    --font-heading: "IvyMode", "Georgia", serif;
+    --font-body: "Manrope", "Metropolis", "Segoe UI", Arial, sans-serif;
+}
+
+@font-face {
+    font-family: "IvyMode";
+    src: url("../new-css/css/fonts/IvyMode-Regular.woff2") format("woff2");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "IvyMode";
+    src: url("../new-css/css/fonts/IvyMode-SemiBold.woff2") format("woff2");
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Metropolis";
+    src: url("../new-css/css/fonts/Metropolis-Regular.woff2") format("woff2");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Metropolis";
+    src: url("../new-css/css/fonts/Metropolis-SemiBold.woff2") format("woff2");
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding-top: 0 !important;
+    overflow-x: hidden;
+    color: var(--ah-text);
+    font-family: var(--font-body);
+    line-height: 1.6;
+}
+
+h1,
+h2,
+.heading-h2,
+.ns-section-title,
+.doc-story-title,
+#main_MF h1,
+#main_MF h2 {
+    font-family: var(--font-heading);
+    letter-spacing: 0;
+}
+
+p,
+a,
+button,
+input,
+textarea,
+select,
+#main_MF p,
+#main_MF a,
+#main_MF button {
+    font-family: var(--font-body);
+}
+
+/* =========================================================
+   SITE HEADER (Floating)
+   ========================================================= */
+
+.site-header {
+    position: fixed;
+    top: 18px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100% - 48px);
+    max-width: 1450px;
+    z-index: 9999;
+    transition:
+        transform 0.45s cubic-bezier(.22, 1, .36, 1),
+        opacity 0.35s ease;
+}
+
+.site-header.nav-hidden {
+    transform: translate(-50%, -130%);
+    opacity: 0;
+    pointer-events: none;
+}
+
+.site-header.nav-visible {
+    transform: translateX(-50%);
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* =========================================================
+   NAVBAR BAR
+   ========================================================= */
+
+.ra-navbar {
+    min-height: 96px;
+    padding: 12px 22px 12px 28px;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    background: rgba(255, 255, 255, 0.94);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    border: 1px solid rgba(40, 70, 50, 0.10);
+    border-radius: 22px;
+    box-shadow: 0 18px 50px rgba(20, 45, 30, 0.10);
+    transition: box-shadow 0.3s ease, background 0.3s ease;
+}
+
+/* =========================================================
+   BRAND / LOGO
+   ========================================================= */
+
+.ra-brand {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    text-decoration: none;
+    color: inherit;
+    flex-shrink: 0;
+}
+
+.ra-brand .ra-logo-icon {
+    width: 76px;
+    height: 76px;
+    border-radius: 50%;
+    object-fit: contain;
+    display: block;
+    flex-shrink: 0;
+    transition: transform 0.3s ease;
+}
+
+.ra-brand .ra-logo-name {
+    height: 48px;
+    width: auto;
+    object-fit: contain;
+    display: block;
+    flex-shrink: 0;
+}
+
+/* =========================================================
+   DESKTOP NAVIGATION
+   ========================================================= */
+
+.ra-nav-links {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
+
+.ra-nav-link,
+.ra-dropdown-trigger {
+    position: relative;
+    height: 46px;
+    padding: 0 15px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    border: 0;
+    background: transparent;
+    color: #1d2939;
+    text-decoration: none;
+    font-family: var(--font-body);
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 12px;
+    transition: color 0.25s ease, background 0.25s ease;
+    white-space: nowrap;
+}
+
+/* =========================================================
+   DUAL-LAYER TEXT ROLL (Navbar Links)
+   ========================================================= */
+.ra-roll-box {
+    display: inline-flex;
+    flex-direction: column;
+    height: 22px;
+    line-height: 22px;
+    overflow: hidden;
+    position: relative;
+    vertical-align: middle;
+}
+
+.ra-roll-top,
+.ra-roll-bottom {
+    display: block;
+    height: 22px;
+    line-height: 22px;
+    white-space: nowrap;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), color 0.3s ease;
+}
+
+.ra-roll-top {
+    color: inherit;
+    transform: translateY(0);
+}
+
+.ra-roll-bottom {
+    color: #0e6937;
+    transform: translateY(0);
+}
+
+.ra-nav-link:hover .ra-roll-top,
+.ra-nav-link:active .ra-roll-top,
+.ra-dropdown-trigger:hover .ra-roll-top,
+.ra-dropdown-trigger:active .ra-roll-top,
+.ra-drawer-link:hover .ra-roll-top,
+.ra-drawer-link:active .ra-roll-top {
+    transform: translateY(-100%);
+}
+
+.ra-nav-link:hover .ra-roll-bottom,
+.ra-nav-link:active .ra-roll-bottom,
+.ra-dropdown-trigger:hover .ra-roll-bottom,
+.ra-dropdown-trigger:active .ra-roll-bottom,
+.ra-drawer-link:hover .ra-roll-bottom,
+.ra-drawer-link:active .ra-roll-bottom {
+    color: #0e6937;
+    transform: translateY(-100%);
+}
+
+.ra-nav-link::after,
+.ra-dropdown-trigger::after {
+    content: "";
+    position: absolute;
+    left: 15px;
+    right: 15px;
+    bottom: 5px;
+    height: 2px;
+    background: #398c43;
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.ra-nav-link:hover::after,
+.ra-dropdown-trigger:hover::after,
+.ra-nav-link.active::after {
+    transform: scaleX(1);
+}
+
+/* Tap/Active state for mobile */
+.ra-nav-link:active::after,
+.ra-dropdown-trigger:active::after {
+    transform: scaleX(1);
+}
+
+/* Circular Arrow SVG Badge (↗) for Navigation & Site Buttons */
+.ra-btn-arrow {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    background: rgba(255, 255, 255, 0.22);
+    border-radius: 50%;
+    margin-left: 7px;
+    flex-shrink: 0;
+    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), background-color 0.3s ease;
+    vertical-align: middle;
+}
+
+.ra-btn-arrow svg {
+    width: 12px;
+    height: 12px;
+    stroke: currentColor;
+    stroke-width: 2.5;
+    fill: none;
+    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.ra-nav-cta:hover .ra-btn-arrow,
+.ra-nav-cta:active .ra-btn-arrow {
+    background: rgba(255, 255, 255, 0.38);
+    transform: scale(1.12);
+}
+
+.ra-nav-cta:hover .ra-btn-arrow svg,
+.ra-nav-cta:active .ra-btn-arrow svg {
+    transform: translate(2px, -2px);
+}
+
+.ra-dropdown-arrow {
+    font-size: 12px;
+    transition: transform 0.3s ease;
+    display: inline-block;
+}
+
+.ra-dropdown-trigger.is-open .ra-dropdown-arrow {
+    transform: rotate(180deg);
+}
+
+/* Remove default button/link decoration artifacts */
+.ra-nav-link::before,
+.ra-dropdown-trigger::before {
+    content: none !important;
+    display: none !important;
+}
+
+/* =========================================================
+   LANGUAGE TOGGLE
+   ========================================================= */
+
+.ra-language-toggle {
+    height: 46px;
+    padding: 0 4px;
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    border: 1px solid rgba(30, 60, 45, 0.12);
+    border-radius: 23px;
+    background: rgba(255, 255, 255, 0.8);
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.ra-lang-btn {
+    height: 38px;
+    padding: 0 14px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 0;
+    border-radius: 19px;
+    background: transparent;
+    color: #26313e;
+    font-family: var(--font-body);
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.25s ease, color 0.25s ease;
+    white-space: nowrap;
+}
+
+.ra-lang-btn.active {
+    background: var(--ah-blue);
+    color: #ffffff;
+    box-shadow: 0 2px 8px rgba(18, 75, 145, 0.2);
+}
+
+.ra-lang-btn:hover:not(.active) {
+    background: rgba(18, 75, 145, 0.08);
+}
+
+/* =========================================================
+   CTA BUTTON
+   ========================================================= */
+
+.ra-nav-cta {
+    height: 48px;
+    padding: 0 20px;
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    border: none;
+    border-radius: 14px;
+    background: var(--ah-blue);
+    color: #ffffff;
+    text-decoration: none;
+    font-family: var(--font-body);
+    font-size: 13px;
+    font-weight: 700;
+    white-space: nowrap;
+    box-shadow: 0 10px 25px rgba(0, 65, 166, 0.25);
+    transition: transform 0.25s ease, background 0.25s ease, box-shadow 0.25s ease;
+    flex-shrink: 0;
+}
+
+.ra-nav-cta:hover {
+    background: var(--ah-blue-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 14px 30px rgba(0, 65, 166, 0.35);
+}
+
+.ra-nav-cta span {
+    font-size: 17px;
+}
+
+/* =========================================================
+   MEGA MENU (Specialists Dropdown - 3 Columns Luxury Design)
+   ========================================================= */
+
+.ra-dropdown-wrapper {
+    position: static;
+}
+
+.ra-mega-menu {
+    position: absolute;
+    top: calc(100% + 12px);
+    left: 50%;
+    width: min(780px, calc(100vw - 40px));
+    transform: translate(-50%, -10px) scale(0.98);
+    transform-origin: top center;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    padding: 16px 20px 12px;
+    background: #ffffff;
+    border: 1px solid #e8ece9;
+    border-radius: 18px;
+    box-shadow: 0 18px 50px rgba(20, 45, 30, 0.12), 0 4px 16px rgba(0, 0, 0, 0.04);
+    transition: opacity 0.25s ease, transform 0.28s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.25s ease;
+    z-index: 9998;
+}
+
+/* Invisible hover bridge between trigger and mega menu */
+.ra-mega-menu::after {
+    content: "";
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    right: 0;
+    height: 18px;
+    background: transparent;
+}
+
+.ra-mega-menu.open {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translate(-50%, 0) scale(1);
+}
+
+/* Little pointer arrow pointing up to Specialists */
+.ra-mega-menu::before {
+    content: "";
+    position: absolute;
+    top: -6px;
+    left: 50%;
+    width: 12px;
+    height: 12px;
+    background: #ffffff;
+    border-left: 1px solid #e8ece9;
+    border-top: 1px solid #e8ece9;
+    transform: translateX(-50%) rotate(45deg);
+    z-index: 2;
+}
+
+/* Mega menu header */
+.ra-mega-header {
+    text-align: center;
+    margin-bottom: 12px;
+}
+
+.ra-mega-header h3 {
+    color: #0e6937;
+    font-family: var(--font-body);
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    margin: 0 0 4px;
+    text-transform: uppercase;
+}
+
+.ra-mega-header-line {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    color: #0e6937;
+}
+
+.ra-mega-header-line i {
+    display: block;
+    width: 24px;
+    height: 1px;
+    background: #0e6937;
+    opacity: 0.5;
+}
+
+.ra-mega-header-line span {
+    font-size: 13px;
+    line-height: 1;
+}
+
+/* 3-Column Layout */
+.ra-mega-body {
+    display: grid;
+    grid-template-columns: 150px 1.15fr 1.25fr;
+    gap: 14px;
+    align-items: stretch;
+}
+
+/* Column 1: Herbal Imagery */
+.ra-mega-col-visual {
+    display: flex;
+}
+
+.ra-mega-img-wrap {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    min-height: 200px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.06);
+}
+
+.ra-mega-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+.ra-mega-img-wrap:hover .ra-mega-img {
+    transform: scale(1.04);
+}
+
+.ra-mega-img-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(7, 44, 24, 0.7) 0%, transparent 60%);
+    display: flex;
+    align-items: flex-end;
+    padding: 10px 12px;
+    color: #ffffff;
+    font-size: 11.5px;
+    font-weight: 700;
+    letter-spacing: 0.4px;
+}
+
+/* Column 2: 5 Therapies List */
+.ra-mega-col-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 2px;
+}
+
+.ra-service-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    padding: 5px 8px;
+    border-radius: 8px;
+    text-decoration: none;
+    border-bottom: 1px solid #f2f4f2;
+    transition: background 0.18s ease, transform 0.18s ease;
+}
+
+.ra-service-row:last-child {
+    border-bottom: none;
+}
+
+.ra-service-row:hover {
+    background: rgba(14, 105, 55, 0.06);
+    transform: translateX(3px);
+}
+
+.ra-service-arrow {
+    color: #0e6937;
+    font-size: 15px;
+    line-height: 1.2;
+    font-weight: 700;
+    flex-shrink: 0;
+    transition: transform 0.18s ease;
+}
+
+.ra-service-row:hover .ra-service-arrow {
+    transform: translateX(2px);
+}
+
+.ra-service-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.ra-service-title {
+    margin: 0 0 1px;
+    font-family: var(--font-body);
+    font-size: 13.5px;
+    font-weight: 700;
+    color: #1b2d24;
+    transition: color 0.18s ease;
+}
+
+.ra-service-row:hover .ra-service-title {
+    color: #0e6937;
+}
+
+.ra-service-sub {
+    margin: 0;
+    font-size: 11px;
+    color: #667085;
+    line-height: 1.35;
+}
+
+/* Column 3: Consultation Card with Doctor */
+.ra-mega-col-consult {
+    display: flex;
+}
+
+.ra-consult-card {
+    width: 100%;
+    background: #f7f9f7;
+    border: 1px solid #e5ebe5;
+    border-radius: 14px;
+    padding: 12px 14px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 10px;
+    position: relative;
+}
+
+.ra-consult-top {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.ra-consult-text-wrap {
+    flex: 1;
+}
+
+.ra-consult-heading {
+    font-family: var(--font-heading);
+    font-size: 13.5px;
+    line-height: 1.3;
+    color: #0e6937;
+    margin: 0 0 4px;
+    font-weight: 600;
+}
+
+.ra-consult-text {
+    font-size: 11px;
+    color: #475467;
+    line-height: 1.35;
+    margin: 0;
+}
+
+.ra-consult-doctor-wrap {
+    width: 60px;
+    height: 72px;
+    flex-shrink: 0;
+    border-radius: 10px;
+    overflow: hidden;
+    background: #ffffff;
+    border: 1px solid #d5e2d5;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
+}
+
+.ra-consult-doctor-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    display: block;
+}
+
+.ra-consult-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    color: #0e6937;
+    opacity: 0.45;
+}
+
+.ra-consult-divider i {
+    width: 20px;
+    height: 1px;
+    background: #0e6937;
+}
+
+.ra-consult-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    background: #083f24;
+    color: #ffffff;
+    padding: 9px 12px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-family: var(--font-body);
+    font-size: 12px;
+    font-weight: 700;
+    transition: background 0.2s ease, transform 0.18s ease;
+    box-shadow: 0 3px 10px rgba(8, 63, 36, 0.18);
+    text-align: center;
+}
+
+.ra-consult-btn:hover {
+    background: #0e6937;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 14px rgba(8, 63, 36, 0.25);
+}
+
+.ra-consult-btn .ra-btn-arrow {
+    font-size: 13px;
+    transition: transform 0.18s ease;
+}
+
+.ra-consult-btn:hover .ra-btn-arrow {
+    transform: translateX(2px);
+}
+
+/* Bottom Ribbon */
+.ra-mega-bottom-bar {
+    margin-top: 12px;
+    border-top: 1px solid #edf1ed;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 11.5px;
+    background: #f4f8f4;
+    border-radius: 9px;
+    padding: 7px 12px;
+}
+
+.ra-bottom-philosophy {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: #1b2d24;
+    font-weight: 600;
+}
+
+.ra-bottom-leaf {
+    font-size: 13px;
+}
+
+.ra-bottom-explore {
+    color: #0e6937;
+    text-decoration: none;
+    font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    transition: gap 0.18s ease, color 0.18s ease;
+}
+
+.ra-bottom-explore:hover {
+    color: #083f24;
+    gap: 8px;
+}
+
+/* =========================================================
+   MOBILE TOGGLE BUTTON
+   ========================================================= */
+
+.ra-mobile-toggle {
+    display: none;
+    width: 44px;
+    height: 44px;
+    margin-left: auto;
+    border: 1px solid #dfe8df;
+    border-radius: 12px;
+    background: #ffffff;
+    cursor: pointer;
+    padding: 0;
+    flex-shrink: 0;
+}
+
+.ra-mobile-toggle span {
+    display: block;
+    width: 20px;
+    height: 2px;
+    margin: 4px auto;
+    background: #0e6937;
+    transition: 0.25s ease;
+}
+
+.ra-mobile-toggle.active span:nth-child(1) {
+    transform: translateY(6px) rotate(45deg);
+}
+
+.ra-mobile-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.ra-mobile-toggle.active span:nth-child(3) {
+    transform: translateY(-6px) rotate(-45deg);
+}
+
+body.nav-open {
+    overflow: hidden;
+}
+
+html.nav-open,
+html.nav-open body {
+    overflow: hidden !important;
+}
+
+/* =========================================================
+   MOBILE OFF-CANVAS DRAWER & BACKDROP
+   ========================================================= */
+
+/* Backdrop */
+.ra-mobile-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(10, 25, 15, 0.6);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.35s ease, visibility 0.35s ease;
+    z-index: 100000;
+}
+
+.ra-mobile-backdrop.open {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+/* Off-canvas full-cover canvas */
+.ra-mobile-drawer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100vw;
+    max-width: 100%;
+    height: 100vh;
+    height: 100dvh;
+    background: #ffffff;
+    box-shadow: none;
+    transform: translateX(100%);
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    z-index: 100002;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.ra-mobile-drawer.open {
+    transform: translateX(0);
+}
+
+/* Drawer Header */
+.ra-drawer-header {
+    padding: 24px 20px 16px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-bottom: 1px solid #f0f3f0;
+    background: #fdfefe;
+    flex-shrink: 0;
+}
+
+.ra-drawer-close {
+    position: absolute;
+    top: 16px;
+    right: 20px;
+    width: 44px;
+    height: 44px;
+    border: none;
+    background: #f0f4f0;
+    color: #1b2d24;
+    font-size: 26px;
+    line-height: 1;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.ra-drawer-close:hover {
+    background: #e2ece2;
+    transform: rotate(90deg);
+}
+
+.ra-drawer-logo-wrap {
+    width: 110px;
+    height: 110px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ra-drawer-logo {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+/* Drawer Body & Menu */
+.ra-drawer-body {
+    padding: 16px 24px 36px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    max-width: 520px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.ra-drawer-menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.ra-drawer-item {
+    border-bottom: 1px solid #f0f3f0;
+}
+
+.ra-drawer-link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    min-height: 50px;
+    padding: 12px 6px;
+    color: #1b2d24;
+    text-decoration: none;
+    font-family: var(--font-body);
+    font-size: 16px;
+    font-weight: 600;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+    transition: color 0.2s ease;
+}
+
+.ra-drawer-link:hover,
+.ra-drawer-link:active {
+    color: #0e6937;
+}
+
+.ra-drawer-chevron {
+    font-size: 14px;
+    color: #667085;
+    transition: transform 0.3s ease;
+}
+
+.ra-drawer-accordion-btn.is-open .ra-drawer-chevron {
+    transform: rotate(180deg);
+    color: #0e6937;
+}
+
+/* Submenu Accordion */
+.ra-drawer-submenu {
+    list-style: none;
+    margin: 0;
+    padding: 0 0 10px 16px;
+    display: none;
+    background: #f8faf8;
+    border-radius: 8px;
+    margin-bottom: 8px;
+}
+
+.ra-drawer-submenu.is-open {
+    display: block;
+}
+
+.ra-drawer-sublink {
+    display: block;
+    padding: 10px 12px;
+    color: #344054;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    border-bottom: 1px solid #edf1ed;
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.ra-drawer-submenu li:last-child .ra-drawer-sublink {
+    border-bottom: none;
+}
+
+.ra-drawer-sublink:hover,
+.ra-drawer-sublink:active {
+    color: #0e6937;
+    transform: translateX(4px);
+}
+
+/* Mobile Language Selector */
+.ra-drawer-lang {
+    margin-top: 20px;
+    padding: 14px 10px;
+    background: #f7f9f7;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.ra-drawer-lang-label {
+    font-size: 13px;
+    font-weight: 600;
+    color: #475467;
+}
+
+.ra-drawer-lang-toggle {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.ra-mobile-lang-btn {
+    border: none;
+    background: transparent;
+    padding: 4px 10px;
+    border-radius: 14px;
+    font-family: var(--font-body);
+    font-size: 13px;
+    font-weight: 600;
+    color: #344054;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.ra-mobile-lang-btn.active {
+    background: #0e6937;
+    color: #ffffff;
+}
+
+.ra-mobile-lang-sep {
+    color: #d0d5dd;
+    font-size: 12px;
+}
+
+/* Mobile CTA Button */
+.ra-drawer-cta {
+    margin-top: 18px;
+}
+
+.ra-drawer-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    min-height: 48px;
+    padding: 12px;
+    background: #0e6937;
+    color: #ffffff;
+    border-radius: 12px;
+    text-decoration: none;
+    font-family: var(--font-body);
+    font-size: 14px;
+    font-weight: 700;
+    box-shadow: 0 4px 14px rgba(14, 105, 55, 0.25);
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.ra-drawer-btn:active {
+    transform: scale(0.98);
+}
+
+/* =========================================================
+   RESPONSIVE: COMPACT DESKTOP (992px - 1200px)
+   ========================================================= */
+
+@media (max-width: 1200px) and (min-width: 980px) {
+    .ra-navbar {
+        gap: 10px;
+        padding: 10px 16px;
+    }
+
+    .ra-brand {
+        gap: 10px;
+    }
+
+    .ra-brand .ra-logo-icon {
+        width: 60px;
+        height: 60px;
+    }
+
+    .ra-brand .ra-logo-name {
+        height: 36px;
+    }
+
+    .ra-nav-links {
+        gap: 3px;
+    }
+
+    .ra-nav-link,
+    .ra-dropdown-trigger {
+        padding: 0 7px;
+        font-size: 13px;
+    }
+
+    .ra-nav-cta {
+        padding: 0 12px;
+        font-size: 12px;
+    }
+
+    .ra-lang-btn {
+        padding: 0 8px;
+        font-size: 12px;
+    }
+
+    .ra-mega-body {
+        grid-template-columns: 180px 1.2fr 1.2fr;
+        gap: 16px;
+    }
+}
+
+/* =========================================================
+   RESPONSIVE: MOBILE & TABLET (<=979px)
+   ========================================================= */
+
+@media (max-width: 979px) {
+    .site-header {
+        width: calc(100% - 24px);
+        top: 12px;
+    }
+
+    .ra-navbar {
+        min-height: 82px;
+        padding: 9px 12px 9px 16px;
+        border-radius: 17px;
+    }
+
+    .ra-brand .ra-logo-icon {
+        width: 65px;
+        height: 65px;
+    }
+
+    .ra-brand .ra-logo-name {
+        height: 38px;
+    }
+
+    .ra-nav-links,
+    .ra-nav-cta,
+    .ra-mega-menu {
+        display: none !important;
+    }
+
+    .ra-mobile-toggle {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 480px) {
+    .ra-navbar {
+        min-height: 80px;
+        padding: 8px 10px;
+    }
+
+    .ra-brand {
+        gap: 8px;
+        min-width: 0;
+    }
+
+    .ra-brand .ra-logo-name {
+        height: 36px;
+        max-width: 190px;
+    }
+
+    .ra-brand .ra-logo-icon {
+        width: 60px;
+        height: 60px;
+    }
+}

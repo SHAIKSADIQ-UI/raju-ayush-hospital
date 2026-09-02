@@ -1,0 +1,66 @@
+.blogPage #BlogDetail table {
+    font-size: 15px;
+    line-height: 26px;
+    border: 1px solid #dee2e6;
+    margin: 25px 0 25px;
+    color: #212529;
+    vertical-align: top;
+    width: 100%;
+}
+
+.blogPage #BlogDetail table>thead {
+    vertical-align: bottom;
+}
+
+.blogPage #BlogDetail table>:not(:last-child)>:last-child>* {
+    background: #f1f1f1;
+}
+
+.blogPage #BlogDetail table>tbody {
+    vertical-align: inherit;
+}
+
+.blogPage #BlogDetail table>:not(caption)>*>* {
+    padding: 0.5rem 0.5rem;
+    border: 1px solid #dee2e6;
+}
+
+.blogPage #BlogDetail h2,
+.blogPage #BlogDetail h3,
+.blogPage #BlogDetail h4,
+.blogPage #BlogDetail h5 {
+    text-transform: none;
+    font-size: 16px;
+}
+
+@media only screen and (min-width: 576px) {
+
+    .blogPage #BlogDetail h2,
+    .blogPage #BlogDetail h3,
+    .blogPage #BlogDetail h4,
+    .blogPage #BlogDetail h5 {
+        font-size: 18px;
+    }
+}
+
+@media only screen and (min-width: 992px) {
+
+    .blogPage #BlogDetail h2,
+    .blogPage #BlogDetail h3,
+    .blogPage #BlogDetail h4,
+    .blogPage #BlogDetail h5 {
+        font-size: 20px;
+    }
+}
+
+.blogPage #BlogDetail .lftBx ul li::after {
+    bottom: auto;
+    top: 4px;
+}
+
+@media only screen and (min-width: 468px) {
+    .blogPage #BlogDetail .lftBx ul li::after {
+        bottom: auto;
+        top: 6px;
+    }
+}

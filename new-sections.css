@@ -1,0 +1,1394 @@
+/* ============================================================
+   WH HEALTHCARE — NEW SECTIONS CSS
+   All 10 new sections: Stats, Doctor, Diseases, Why Us,
+   Treatment, Success, FAQ, Contact, Blog, Partners
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap');
+
+/* ============================================================
+   DESIGN TOKENS
+   ============================================================ */
+:root {
+    --ns-green-50: #f0fdf4;
+    --ns-green-100: #dcfce7;
+    --ns-green-200: #bbf7d0;
+    --ns-green-300: #86efac;
+    --ns-green-400: #16a34a;
+    --ns-green-500: #22c55e;
+    --ns-green-600: #16a34a;
+    --ns-green-700: #15803d;
+    --ns-green-800: #166534;
+    --ns-green-900: #14532d;
+    --ns-green-950: #052e16;
+
+    --ns-blue-primary: #0041a6;
+    --ns-blue-dark: #003080;
+    --ns-blue-light: #eaf1fb;
+    --ns-blue-glow: rgba(0, 65, 166, 0.25);
+
+    --ns-bg-primary: #ffffff;
+    --ns-bg-alt: #f8faf9;
+    --ns-bg-card: #ffffff;
+    --ns-bg-card-hover: #f0fdf4;
+    --ns-border-light: rgba(0, 0, 0, 0.08);
+    --ns-border-green: rgba(22, 163, 74, 0.2);
+    --ns-text-primary: #1a1a2e;
+    --ns-text-secondary: #4a5568;
+    --ns-text-muted: #718096;
+    --ns-gold: #b8860b;
+    --ns-gold-light: #d4a853;
+
+    --ns-font-heading: 'Playfair Display', Georgia, serif;
+    --ns-font-body: 'Inter', 'Segoe UI', system-ui, sans-serif;
+
+    --ns-radius-sm: 8px;
+    --ns-radius-md: 16px;
+    --ns-radius-lg: 24px;
+    --ns-radius-xl: 32px;
+
+    --ns-shadow-soft: 0 4px 20px rgba(0, 0, 0, 0.06);
+    --ns-shadow-card: 0 8px 30px rgba(0, 0, 0, 0.08);
+    --ns-shadow-glow: 0 0 30px rgba(22, 163, 74, 0.1);
+
+    --ns-section-pad: clamp(60px, 10vw, 120px) clamp(20px, 5vw, 80px);
+    --ns-max-width: 1320px;
+}
+
+/* ============================================================
+   GAP FIX — Remove space between existing content & new sections
+   ============================================================ */
+#stats-section {
+    margin-top: -2px;
+}
+
+/* ============================================================
+   SHARED SECTION STYLES
+   ============================================================ */
+.ns-section {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    font-family: var(--ns-font-body);
+    color: var(--ns-text-primary);
+    background: var(--ns-bg-primary);
+}
+
+.ns-container {
+    max-width: var(--ns-max-width);
+    margin: 0 auto;
+    padding: var(--ns-section-pad);
+    position: relative;
+    z-index: 2;
+}
+
+.ns-section-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--ns-green-600);
+    margin-bottom: 16px;
+}
+
+.ns-section-label::before {
+    content: '';
+    width: 32px;
+    height: 2px;
+    background: var(--ns-green-500);
+    border-radius: 2px;
+}
+
+.ns-section-title {
+    font-family: var(--ns-font-heading);
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 700;
+    line-height: 1.15;
+    margin-bottom: 20px;
+    color: var(--ns-text-primary);
+}
+
+.ns-section-subtitle {
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    color: var(--ns-text-secondary);
+    line-height: 1.7;
+    max-width: 640px;
+}
+
+.ns-three-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* ============================================================
+   1. STATS / ACHIEVEMENT COUNTER
+   ============================================================ */
+/* ============================================================
+   1. STATS / ACHIEVEMENT COUNTER (Royal Blue Luxury Banner)
+   ============================================================ */
+.ns-stats {
+    background: linear-gradient(135deg, #021738 0%, #002b70 50%, #0041a6 100%);
+    color: #ffffff;
+    padding: 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.ns-stats::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 80% 20%, rgba(96, 165, 250, 0.18), transparent 60%);
+    pointer-events: none;
+}
+
+.ns-stats .ns-container {
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+.ns-stats .ns-section-label {
+    color: #60a5fa;
+}
+
+.ns-stats .ns-section-label::before {
+    background: #60a5fa;
+}
+
+.ns-stats .ns-section-title {
+    color: #ffffff;
+}
+
+.ns-stats .ns-section-subtitle {
+    color: rgba(255, 255, 255, 0.85);
+    margin: 0 auto 60px;
+}
+
+.ns-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 24px;
+}
+
+.ns-stat-card {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-radius: var(--ns-radius-lg);
+    padding: 40px 20px;
+    text-align: center;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.22);
+    transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.ns-stat-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: radial-gradient(circle at 50% 0%, rgba(96, 165, 250, 0.25), transparent 70%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.ns-stat-card:hover {
+    transform: translateY(-6px);
+    border-color: #60a5fa;
+    background: rgba(255, 255, 255, 0.14);
+    box-shadow: 0 16px 40px rgba(0, 65, 166, 0.45);
+}
+
+.ns-stat-card:hover::before {
+    opacity: 1;
+}
+
+.ns-stat-icon {
+    font-size: 36px;
+    margin-bottom: 16px;
+    display: block;
+}
+
+.ns-stat-number {
+    font-family: var(--ns-font-heading);
+    font-size: clamp(2.2rem, 4vw, 3.2rem);
+    font-weight: 700;
+    color: #ffffff;
+    text-shadow: 0 2px 16px rgba(96, 165, 250, 0.6);
+    line-height: 1;
+    margin-bottom: 8px;
+}
+
+.ns-stat-label {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.ns-stat-card.completed .ns-stat-number {
+    animation: statPulse 0.6s ease;
+}
+
+@keyframes statPulse {
+    0%, 100% { text-shadow: 0 0 0 transparent; }
+    50% { text-shadow: 0 0 20px rgba(34, 197, 94, 0.5); }
+}
+
+/* ============================================================
+   2. DOCTOR PROFILE / MEET THE EXPERT
+   ============================================================ */
+.ns-doctor {
+    background: var(--ns-bg-primary);
+}
+
+.ns-doctor-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.ns-doctor-photo-wrap {
+    position: relative;
+    border-radius: var(--ns-radius-xl);
+    overflow: hidden;
+    aspect-ratio: 3/4;
+    box-shadow: var(--ns-shadow-card);
+}
+
+.ns-doctor-photo-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.ns-doctor-photo-frame {
+    position: absolute;
+    inset: -1px;
+    border: 2px solid rgba(34, 197, 94, 0.2);
+    border-radius: inherit;
+    pointer-events: none;
+}
+
+.ns-doctor-content {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+}
+
+.ns-doctor-name {
+    font-family: var(--ns-font-heading);
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.ns-doctor-name span {
+    color: var(--ns-green-400);
+}
+
+.ns-doctor-title {
+    font-size: 16px;
+    color: var(--ns-gold);
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.ns-doctor-quote {
+    position: relative;
+    padding: 24px 28px;
+    background: rgba(34, 197, 94, 0.05);
+    border-left: 3px solid var(--ns-green-500);
+    border-radius: 0 var(--ns-radius-md) var(--ns-radius-md) 0;
+    font-style: italic;
+    font-size: 17px;
+    line-height: 1.7;
+    color: var(--ns-text-secondary);
+}
+
+.ns-doctor-credentials {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.ns-credential-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 16px;
+    background: var(--ns-bg-alt);
+    border: 1px solid var(--ns-border-light);
+    border-radius: var(--ns-radius-sm);
+    font-size: 15px;
+    color: var(--ns-text-secondary);
+    transition: all 0.3s ease;
+    opacity: 0;
+    transform: translateX(-20px);
+}
+
+.ns-credential-item.revealed {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.ns-credential-item:hover {
+    border-color: var(--ns-border-green);
+    background: var(--ns-green-50);
+}
+
+.ns-credential-icon {
+    font-size: 20px;
+    flex-shrink: 0;
+}
+
+.ns-doctor-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 16px 32px;
+    background: linear-gradient(135deg, var(--ns-blue-primary), var(--ns-blue-dark));
+    color: #fff;
+    font-weight: 600;
+    font-size: 15px;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    width: fit-content;
+    box-shadow: 0 4px 20px rgba(0, 65, 166, 0.35);
+}
+
+.ns-doctor-cta:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(0, 65, 166, 0.45);
+}
+
+/* ============================================================
+   3. DISEASES WE TREAT
+   ============================================================ */
+.ns-diseases {
+    background: var(--ns-bg-alt);
+}
+
+.ns-diseases-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.ns-diseases-header .ns-section-subtitle {
+    margin: 0 auto;
+}
+
+.ns-disease-filter {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-bottom: 48px;
+}
+
+.ns-disease-filter-btn {
+    padding: 10px 20px;
+    background: var(--ns-bg-card);
+    border: 1px solid var(--ns-border-light);
+    border-radius: 50px;
+    color: var(--ns-text-secondary);
+    font-family: var(--ns-font-body);
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    letter-spacing: 0.5px;
+}
+
+.ns-disease-filter-btn:hover,
+.ns-disease-filter-btn.active {
+    background: var(--ns-blue-primary);
+    border-color: var(--ns-blue-primary);
+    color: #fff;
+    box-shadow: 0 4px 16px rgba(0, 65, 166, 0.25);
+}
+
+.ns-disease-search {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 32px;
+}
+
+.ns-disease-search input {
+    width: 100%;
+    max-width: 420px;
+    padding: 14px 24px;
+    background: var(--ns-bg-card);
+    border: 1px solid var(--ns-border-light);
+    border-radius: 50px;
+    color: var(--ns-text-primary);
+    font-family: var(--ns-font-body);
+    font-size: 15px;
+    outline: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.ns-disease-search input::placeholder {
+    color: var(--ns-text-muted);
+}
+
+.ns-disease-search input:focus {
+    border-color: var(--ns-blue-primary);
+    box-shadow: 0 0 0 3px rgba(0, 65, 166, 0.15);
+}
+
+.ns-diseases-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 20px;
+}
+
+.ns-disease-card {
+    perspective: 800px;
+    height: 220px;
+    cursor: pointer;
+}
+
+.ns-disease-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+    transform-style: preserve-3d;
+}
+
+.ns-disease-card:hover .ns-disease-card-inner {
+    transform: rotateY(180deg);
+}
+
+.ns-disease-card-front,
+.ns-disease-card-back {
+    position: absolute;
+    inset: 0;
+    backface-visibility: hidden;
+    border-radius: var(--ns-radius-md);
+    border: 1px solid var(--ns-border-light);
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+}
+
+.ns-disease-card-front {
+    background: var(--ns-bg-card);
+    box-shadow: var(--ns-shadow-soft);
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 16px;
+}
+
+.ns-disease-card-front .ns-disease-icon {
+    font-size: 40px;
+}
+
+.ns-disease-card-front h3 {
+    font-family: var(--ns-font-heading);
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--ns-text-primary);
+}
+
+.ns-disease-card-front p {
+    font-size: 13px;
+    color: var(--ns-text-muted);
+}
+
+.ns-disease-card-back {
+    background: linear-gradient(135deg, var(--ns-green-800), var(--ns-green-900));
+    transform: rotateY(180deg);
+    justify-content: center;
+    gap: 12px;
+    padding: 24px;
+}
+
+.ns-disease-card-back h4 {
+    font-family: var(--ns-font-heading);
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--ns-green-100);
+}
+
+.ns-disease-card-back p {
+    font-size: 13px;
+    line-height: 1.6;
+    color: var(--ns-green-200);
+}
+
+.ns-disease-card-back .ns-treatment-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 14px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50px;
+    font-size: 12px;
+    color: var(--ns-green-100);
+    width: fit-content;
+}
+
+.ns-disease-card.hidden {
+    display: none;
+}
+
+/* ============================================================
+   4. WHY ALTERNATIVE MEDICINE / WHY CHOOSE US
+   ============================================================ */
+.ns-why-us {
+    background: var(--ns-bg-primary);
+    min-height: auto;
+}
+
+.ns-why-us-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: start;
+    min-height: 80vh;
+}
+
+.ns-why-us-visual {
+    position: relative;
+    border-radius: var(--ns-radius-xl);
+    overflow: hidden;
+    aspect-ratio: 4/5;
+}
+
+.ns-why-us-visual img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.ns-why-us-content {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.ns-benefit-item {
+    display: flex;
+    gap: 20px;
+    padding: 24px;
+    background: var(--ns-bg-card);
+    border: 1px solid var(--ns-border-light);
+    border-radius: var(--ns-radius-md);
+    transition: all 0.4s ease;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.ns-benefit-item.revealed {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.ns-benefit-item:hover {
+    background: var(--ns-blue-light);
+    border-color: var(--ns-blue-primary);
+}
+
+.ns-benefit-check {
+    flex-shrink: 0;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--ns-blue-light);
+    border-radius: 50%;
+    color: var(--ns-blue-primary);
+}
+
+.ns-benefit-check svg {
+    width: 18px;
+    height: 18px;
+    stroke: var(--ns-blue-primary);
+    stroke-width: 3;
+    fill: none;
+    stroke-dasharray: 24;
+    stroke-dashoffset: 24;
+    transition: stroke-dashoffset 0.6s ease;
+}
+
+.ns-benefit-item.revealed .ns-benefit-check svg {
+    stroke-dashoffset: 0;
+}
+
+.ns-benefit-text h3 {
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--ns-text-primary);
+    margin-bottom: 6px;
+}
+
+.ns-benefit-text p {
+    font-size: 14px;
+    color: var(--ns-text-secondary);
+    line-height: 1.6;
+}
+
+/* ============================================================
+   5. TREATMENT PROCESS / HOW IT WORKS
+   ============================================================ */
+.ns-treatment {
+    background: var(--ns-bg-alt);
+    padding-bottom: 0;
+}
+
+.ns-treatment-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.ns-treatment-header .ns-section-subtitle {
+    margin: 0 auto;
+}
+
+.ns-treatment-timeline {
+    display: flex;
+    gap: 0;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    padding-bottom: 60px;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.ns-treatment-timeline::-webkit-scrollbar {
+    display: none;
+}
+
+.ns-treatment-step {
+    flex: 0 0 min(320px, 80vw);
+    scroll-snap-align: center;
+    padding: 0 16px;
+    position: relative;
+}
+
+.ns-step-card {
+    background: var(--ns-bg-card);
+    border: 1px solid var(--ns-border-light);
+    border-radius: var(--ns-radius-lg);
+    box-shadow: var(--ns-shadow-soft);
+    padding: 36px 28px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    transition: all 0.4s ease;
+    position: relative;
+}
+
+.ns-step-card:hover {
+    border-color: var(--ns-blue-primary);
+    transform: translateY(-4px);
+    box-shadow: 0 8px 30px rgba(0, 65, 166, 0.2);
+}
+
+.ns-step-number {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--ns-blue-primary), var(--ns-blue-dark));
+    border-radius: 50%;
+    font-family: var(--ns-font-heading);
+    font-size: 20px;
+    font-weight: 700;
+    color: #fff;
+    box-shadow: 0 4px 15px rgba(0, 65, 166, 0.28);
+}
+
+.ns-step-icon {
+    font-size: 32px;
+}
+
+.ns-step-card h3 {
+    font-family: var(--ns-font-heading);
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+.ns-step-card p {
+    font-size: 14px;
+    color: var(--ns-text-secondary);
+    line-height: 1.7;
+    flex-grow: 1;
+}
+
+.ns-treatment-connector {
+    position: absolute;
+    top: 50%;
+    right: -8px;
+    width: 32px;
+    height: 2px;
+    background: var(--ns-border-light);
+    z-index: 1;
+}
+
+.ns-treatment-step:last-child .ns-treatment-connector {
+    display: none;
+}
+
+/* ============================================================
+   6. SUCCESS STORIES / BEFORE & AFTER
+   ============================================================ */
+.ns-success {
+    background: var(--ns-bg-primary);
+}
+
+.ns-success-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.ns-success-header .ns-section-subtitle {
+    margin: 0 auto;
+}
+
+.ns-success-stories {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+    gap: 32px;
+}
+
+.ns-story-card {
+    background: var(--ns-bg-card);
+    border: 1px solid var(--ns-border-light);
+    border-radius: var(--ns-radius-lg);
+    overflow: hidden;
+    box-shadow: var(--ns-shadow-soft);
+    transition: all 0.4s ease;
+}
+
+.ns-story-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--ns-shadow-card);
+    border-color: var(--ns-blue-primary);
+}
+
+.ns-before-after {
+    position: relative;
+    height: 260px;
+    overflow: hidden;
+    cursor: col-resize;
+    user-select: none;
+}
+
+.ns-ba-before,
+.ns-ba-after {
+    position: absolute;
+    inset: 0;
+}
+
+.ns-ba-before {
+    background: linear-gradient(135deg, #f1f1f1, #e0e0e0);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ns-ba-after {
+    background: linear-gradient(135deg, #e8f0fe, #bfdbfe);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    clip-path: inset(0 50% 0 0);
+}
+
+.ns-ba-label {
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: rgba(0, 0, 0, 0.35);
+}
+
+.ns-ba-after .ns-ba-label {
+    color: var(--ns-blue-primary);
+}
+
+.ns-ba-divider {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 3px;
+    height: 100%;
+    background: var(--ns-blue-primary);
+    transform: translateX(-50%);
+    z-index: 3;
+    cursor: col-resize;
+}
+
+.ns-ba-divider::before {
+    content: '⟷';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 36px;
+    height: 36px;
+    background: var(--ns-blue-primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    color: #fff;
+    box-shadow: 0 0 15px rgba(0, 65, 166, 0.5);
+}
+
+.ns-story-content {
+    padding: 24px;
+}
+
+.ns-story-condition {
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--ns-green-600);
+    margin-bottom: 8px;
+}
+
+.ns-story-content h3 {
+    font-family: var(--ns-font-heading);
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.ns-story-content p {
+    font-size: 14px;
+    color: var(--ns-text-secondary);
+    line-height: 1.6;
+    font-style: italic;
+}
+
+.ns-story-meta {
+    display: flex;
+    gap: 16px;
+    margin-top: 12px;
+    font-size: 12px;
+    color: var(--ns-text-muted);
+}
+
+/* ============================================================
+   7. FAQ
+   ============================================================ */
+.ns-faq {
+    background: var(--ns-bg-alt);
+}
+
+.ns-faq-header {
+    text-align: center;
+    margin-bottom: 56px;
+}
+
+.ns-faq-header .ns-section-subtitle {
+    margin: 0 auto;
+}
+
+.ns-faq-list {
+    max-width: 820px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.ns-faq-item {
+    background: var(--ns-bg-card);
+    border: 1px solid var(--ns-border-light);
+    border-radius: var(--ns-radius-md);
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.ns-faq-item.active {
+    border-color: var(--ns-blue-primary);
+    box-shadow: var(--ns-shadow-glow);
+}
+
+.ns-faq-item.active::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 3px;
+    height: 100%;
+    background: var(--ns-blue-primary);
+    border-radius: 3px 0 0 3px;
+}
+
+.ns-faq-question {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 22px 28px;
+    cursor: pointer;
+    gap: 16px;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--ns-text-primary);
+    transition: color 0.3s ease;
+    background: none;
+    border: none;
+    width: 100%;
+    text-align: left;
+    font-family: var(--ns-font-body);
+    position: relative;
+}
+
+.ns-faq-item.active .ns-faq-question {
+    color: var(--ns-blue-primary);
+}
+
+.ns-faq-toggle {
+    flex-shrink: 0;
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: var(--ns-bg-alt);
+    transition: all 0.3s ease;
+    font-size: 18px;
+    color: var(--ns-text-muted);
+}
+
+.ns-faq-item.active .ns-faq-toggle {
+    background: var(--ns-blue-light);
+    color: var(--ns-blue-primary);
+    transform: rotate(45deg);
+}
+
+.ns-faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.ns-faq-answer-content {
+    padding: 0 28px 24px;
+    font-size: 15px;
+    line-height: 1.8;
+    color: var(--ns-text-secondary);
+}
+
+/* ============================================================
+   8. CLINIC LOCATION & CONTACT CTA
+   ============================================================ */
+.ns-contact {
+    background: var(--ns-bg-primary);
+}
+
+.ns-contact-header {
+    text-align: center;
+    margin-bottom: 56px;
+}
+
+.ns-contact-header .ns-section-subtitle {
+    margin: 0 auto;
+}
+
+.ns-contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: start;
+}
+
+.ns-contact-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.ns-contact-card {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 24px;
+    background: var(--ns-bg-card);
+    border: 1px solid var(--ns-border-light);
+    box-shadow: var(--ns-shadow-soft);
+    border-radius: var(--ns-radius-md);
+    transition: all 0.3s ease;
+    text-decoration: none;
+    color: inherit;
+}
+
+.ns-contact-card:hover {
+    border-color: var(--ns-blue-primary);
+    background: var(--ns-blue-light);
+    transform: translateX(4px);
+}
+
+.ns-contact-card-icon {
+    width: 52px;
+    height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--ns-blue-light);
+    color: var(--ns-blue-primary);
+    border-radius: var(--ns-radius-sm);
+    font-size: 24px;
+    flex-shrink: 0;
+    transition: all 0.3s ease;
+}
+
+.ns-contact-card:hover .ns-contact-card-icon {
+    background: var(--ns-blue-primary);
+    color: #ffffff;
+}
+
+.ns-contact-card h3 {
+    font-size: 14px;
+    color: var(--ns-text-muted);
+    font-weight: 500;
+    margin-bottom: 4px;
+}
+
+.ns-contact-card p {
+    font-size: 16px;
+    color: var(--ns-text-primary);
+    font-weight: 600;
+}
+
+.ns-contact-map {
+    border-radius: var(--ns-radius-lg);
+    overflow: hidden;
+    border: 1px solid var(--ns-border-light);
+    height: 100%;
+    min-height: 380px;
+    background: #f0f0f0;
+    box-shadow: var(--ns-shadow-soft);
+}
+
+.ns-contact-map iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    filter: none;
+}
+
+.ns-contact-cta-wrap {
+    text-align: center;
+    margin-top: 48px;
+}
+
+.ns-cta-main {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 20px 48px;
+    background: linear-gradient(135deg, var(--ns-blue-primary), var(--ns-blue-dark));
+    color: #fff;
+    font-weight: 700;
+    font-size: 17px;
+    border-radius: 60px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 30px rgba(0, 65, 166, 0.4);
+    animation: ctaPulse 2.5s ease-in-out infinite;
+}
+
+.ns-cta-main:hover {
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 8px 40px rgba(0, 65, 166, 0.55);
+}
+
+@keyframes ctaPulse {
+    0%, 100% { box-shadow: 0 4px 30px rgba(0, 65, 166, 0.4); }
+    50% { box-shadow: 0 4px 40px rgba(0, 65, 166, 0.6), 0 0 60px rgba(0, 65, 166, 0.25); }
+}
+
+/* ============================================================
+   9. HEALTH TIPS / BLOG PREVIEW
+   ============================================================ */
+.ns-blog {
+    background: var(--ns-bg-alt);
+}
+
+.ns-blog-header {
+    text-align: center;
+    margin-bottom: 56px;
+}
+
+.ns-blog-header .ns-section-subtitle {
+    margin: 0 auto;
+}
+
+.ns-blog-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+}
+
+.ns-blog-card {
+    background: var(--ns-bg-card);
+    border: 1px solid var(--ns-border-light);
+    border-radius: var(--ns-radius-lg);
+    box-shadow: var(--ns-shadow-soft);
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+    text-decoration: none;
+    color: inherit;
+}
+
+.ns-blog-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--ns-shadow-card);
+    border-color: var(--ns-border-green);
+}
+
+.ns-blog-thumb {
+    height: 200px;
+    overflow: hidden;
+}
+
+.ns-blog-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.ns-blog-card:hover .ns-blog-thumb img {
+    transform: scale(1.08);
+}
+
+.ns-blog-body {
+    padding: 24px;
+}
+
+.ns-blog-category {
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--ns-green-600);
+    margin-bottom: 10px;
+}
+
+.ns-blog-body h3 {
+    font-family: var(--ns-font-heading);
+    font-size: 1.15rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+    line-height: 1.4;
+    color: var(--ns-text-primary);
+}
+
+.ns-blog-body p {
+    font-size: 14px;
+    color: var(--ns-text-secondary);
+    line-height: 1.6;
+    margin-bottom: 16px;
+}
+
+.ns-blog-read-more {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--ns-green-600);
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: gap 0.3s ease;
+}
+
+.ns-blog-card:hover .ns-blog-read-more {
+    gap: 10px;
+}
+
+/* ============================================================
+   10. PARTNERS / CERTIFICATIONS
+   ============================================================ */
+.ns-partners {
+    background: var(--ns-bg-primary);
+    padding: 0;
+    border-top: 1px solid var(--ns-border-light);
+}
+
+.ns-partners .ns-container {
+    padding-top: 60px;
+    padding-bottom: 60px;
+    text-align: center;
+}
+
+.ns-partners-header {
+    margin-bottom: 40px;
+}
+
+.ns-partners-marquee {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    padding: 20px 0;
+}
+
+.ns-partners-marquee::before,
+.ns-partners-marquee::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 120px;
+    height: 100%;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.ns-partners-marquee::before {
+    left: 0;
+    background: linear-gradient(to right, #fff, transparent);
+}
+
+.ns-partners-marquee::after {
+    right: 0;
+    background: linear-gradient(to left, #fff, transparent);
+}
+
+.ns-partners-track {
+    display: flex;
+    width: max-content;
+    animation: partnersScroll 30s linear infinite;
+}
+
+.ns-partners-track:hover {
+    animation-play-state: paused;
+}
+
+.ns-partner-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px 48px;
+    filter: grayscale(1) opacity(0.4);
+    transition: all 0.4s ease;
+}
+
+.ns-partner-logo:hover {
+    filter: grayscale(0) opacity(1);
+}
+
+.ns-partner-logo img {
+    height: 44px;
+    width: auto;
+    object-fit: contain;
+}
+
+.ns-partner-logo span {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--ns-text-secondary);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+@keyframes partnersScroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+/* ============================================================
+   SECTION DIVIDER
+   ============================================================ */
+.ns-divider {
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--ns-border-light), transparent);
+}
+
+/* ============================================================
+   RESPONSIVE DESIGN
+   ============================================================ */
+@media (max-width: 1024px) {
+    .ns-stats-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .ns-doctor-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    .ns-doctor-photo-wrap {
+        max-width: 400px;
+        margin: 0 auto;
+    }
+    .ns-why-us-layout {
+        grid-template-columns: 1fr;
+    }
+    .ns-why-us-visual {
+        max-height: 400px;
+    }
+    .ns-contact-grid {
+        grid-template-columns: 1fr;
+    }
+    .ns-blog-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .ns-stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .ns-diseases-grid {
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    }
+    .ns-disease-card {
+        height: 200px;
+    }
+    .ns-success-stories {
+        grid-template-columns: 1fr;
+    }
+    .ns-blog-grid {
+        grid-template-columns: 1fr;
+    }
+    .ns-treatment-step {
+        flex: 0 0 min(280px, 85vw);
+    }
+}
+
+@media (max-width: 480px) {
+    .ns-stats-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+    .ns-stat-card {
+        padding: 28px 20px;
+    }
+    .ns-disease-filter {
+        justify-content: flex-start;
+        overflow-x: auto;
+        flex-wrap: nowrap;
+        padding-bottom: 8px;
+    }
+    .ns-disease-filter-btn {
+        white-space: nowrap;
+    }
+}

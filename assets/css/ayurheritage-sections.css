@@ -1,0 +1,1027 @@
+/* =========================================================
+   AYURHERITAGE SECTIONS STYLING (100% Exact Matching)
+   Testimonials (#testimonialSec), Contact Form (#contactSec), FAQ (#faqSec)
+   ========================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap');
+
+/* Typography & Common Variables */
+:root {
+    --ayur-green: #0e6937;
+    --ayur-green-dark: #072c18;
+    --ayur-accent: #96b442;
+    --ayur-lime: #bee356;
+    --ayur-faq-bg: #f0f5fc;
+    --ayur-text: #4a4b4b;
+    --ayur-font-serif: "IvyMode", "Playfair Display", Georgia, serif;
+    --ayur-font-sans: "Metropolis", "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+/* Falling Leaves Animations (Top to Bottom Loop) */
+@keyframes ayurFallingLeaf {
+    0% {
+        top: -15%;
+        opacity: 0;
+        transform: rotateZ(0deg) translateX(0px);
+    }
+    10% {
+        opacity: 0.9;
+    }
+    30% {
+        opacity: 1;
+        transform: rotateZ(45deg) translateX(-35px);
+    }
+    50% {
+        opacity: 1;
+        transform: rotateZ(90deg) translateX(25px);
+    }
+    75% {
+        opacity: 0.9;
+        transform: rotateZ(180deg) translateX(-25px);
+    }
+    100% {
+        top: 110%;
+        opacity: 0;
+        transform: rotateZ(240deg) translateX(15px);
+    }
+}
+
+@keyframes ayurFallingLeaf2 {
+    0% {
+        top: -15%;
+        opacity: 0;
+        transform: rotateZ(40deg) translateX(0px);
+    }
+    15% {
+        opacity: 0.9;
+    }
+    35% {
+        opacity: 1;
+        transform: rotateZ(95deg) translateX(45px);
+    }
+    60% {
+        opacity: 1;
+        transform: rotateZ(140deg) translateX(-30px);
+    }
+    85% {
+        opacity: 0.85;
+        transform: rotateZ(210deg) translateX(35px);
+    }
+    100% {
+        top: 110%;
+        opacity: 0;
+        transform: rotateZ(280deg) translateX(-15px);
+    }
+}
+
+/* Shared Section Header */
+.ayur-cmn-head {
+    color: var(--ayur-green);
+    font-weight: 400;
+    font-family: var(--ayur-font-serif);
+    font-size: 26px;
+    line-height: 1.25;
+    margin-bottom: 12px;
+}
+@media (min-width: 576px) { .ayur-cmn-head { font-size: 30px; } }
+@media (min-width: 768px) { .ayur-cmn-head { font-size: 34px; margin-bottom: 16px; } }
+@media (min-width: 992px) { .ayur-cmn-head { font-size: 38px; margin-bottom: 20px; } }
+@media (min-width: 1200px) { .ayur-cmn-head { font-size: 42px; margin-bottom: 24px; } }
+
+.ayur-cmn-head.cntr {
+    text-align: center;
+}
+
+/* Hover Animation Sweep Button */
+.ayur-hoveranim {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    text-decoration: none;
+    border: none;
+    transition: color 0.4s ease;
+    z-index: 1;
+}
+
+.ayur-hoveranim::before {
+    position: absolute;
+    content: "";
+    display: block;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    transform: scale(0, 1);
+    transform-origin: right center;
+    background: #ffffff;
+    transition: transform 0.45s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+    z-index: -1;
+}
+
+.ayur-hoveranim:hover::before {
+    transform-origin: left center;
+    transform: scale(1, 1);
+}
+
+.ayur-hoveranim span {
+    position: relative;
+    z-index: 2;
+    transition: color 0.3s ease;
+}
+
+/* =========================================================
+   1. TESTIMONIALS SECTION (#testimonialSec)
+   ========================================================= */
+#testimonialSec {
+    background: #ffffff;
+    padding: 60px 0 80px;
+    position: relative;
+    overflow: hidden;
+    font-family: var(--ayur-font-sans);
+}
+
+@media (min-width: 768px) {
+    #testimonialSec {
+        padding: 80px 0 110px;
+    }
+}
+
+@media (min-width: 992px) {
+    #testimonialSec {
+        padding: 100px 0 140px;
+    }
+}
+
+#testimonialSec .heDSc {
+    text-align: center;
+    margin-bottom: 35px;
+    will-change: transform, opacity;
+}
+
+@media (min-width: 768px) {
+    #testimonialSec .heDSc {
+        margin-bottom: 45px;
+    }
+}
+
+@media (min-width: 992px) {
+    #testimonialSec .heDSc {
+        margin-bottom: 55px;
+    }
+}
+
+#testimonialSec .heDSc p {
+    color: var(--ayur-text);
+    font-size: 15px;
+    margin: 0 auto;
+    max-width: 600px;
+    line-height: 1.6;
+}
+
+@media (min-width: 768px) {
+    #testimonialSec .heDSc p {
+        font-size: 17px;
+    }
+}
+
+/* Testimonial Carousel Container */
+#testimonialSec .testiSlide-wrapper {
+    position: relative;
+    max-width: 840px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+#testimonialSec .testiSlide {
+    position: relative;
+    width: 100%;
+}
+
+#testimonialSec .testiSlide .item {
+    position: relative;
+    max-width: 630px;
+    margin: 0 auto;
+    display: none;
+    opacity: 0;
+    transform: scale(0.96);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+#testimonialSec .testiSlide .item.active {
+    display: block;
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* Falling Leaves on Sides (Top to Down Continuous Loop) */
+#testimonialSec .animBx {
+    position: absolute;
+    z-index: 10;
+    pointer-events: none;
+}
+
+#testimonialSec .anim7 {
+    top: -15%;
+    left: -80px;
+    animation: ayurFallingLeaf 14s linear infinite;
+}
+
+#testimonialSec .anim7 img {
+    max-width: 95px;
+    height: auto;
+    filter: drop-shadow(0 8px 15px rgba(0,0,0,0.12));
+}
+
+#testimonialSec .anim8 {
+    top: -15%;
+    right: -80px;
+    animation: ayurFallingLeaf2 19s linear infinite 4s;
+}
+
+#testimonialSec .anim8 img {
+    max-width: 95px;
+    height: auto;
+    filter: drop-shadow(0 8px 15px rgba(0,0,0,0.12));
+}
+
+@media (max-width: 992px) {
+    #testimonialSec .anim7 { left: -30px; }
+    #testimonialSec .anim7 img { max-width: 70px; }
+    #testimonialSec .anim8 { right: -30px; }
+    #testimonialSec .anim8 img { max-width: 70px; }
+}
+
+@media (max-width: 576px) {
+    #testimonialSec .anim7 { left: -10px; }
+    #testimonialSec .anim7 img { max-width: 50px; }
+    #testimonialSec .anim8 { right: -10px; }
+    #testimonialSec .anim8 img { max-width: 50px; }
+}
+
+/* Testimonial Box (The Logo Blue Card) */
+#testimonialSec .tstBx {
+    position: relative !important;
+    border-radius: 20px !important;
+    background: linear-gradient(145deg, #021738 0%, #002b70 50%, #0041a6 100%) !important;
+    box-shadow: 0 16px 40px rgba(0, 65, 166, 0.28), 0 2px 8px rgba(0, 0, 0, 0.08) !important;
+    border: 1.5px solid rgba(96, 165, 250, 0.4) !important;
+    overflow: hidden !important;
+    padding: 35px 25px !important;
+    min-height: 280px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    color: #ffffff !important;
+    will-change: transform, opacity;
+}
+
+@media (min-width: 576px) {
+    #testimonialSec .tstBx {
+        padding: 45px 40px;
+        min-height: 300px;
+    }
+}
+
+@media (min-width: 768px) {
+    #testimonialSec .tstBx {
+        padding: 55px 55px 48px;
+        min-height: 330px;
+    }
+}
+
+@media (min-width: 992px) {
+    #testimonialSec .tstBx {
+        padding: 65px 70px 55px;
+        min-height: 360px;
+    }
+}
+
+#testimonialSec .tstBx p {
+    color: #ffffff;
+    font-size: 15px;
+    line-height: 1.75;
+    margin-bottom: 0;
+    font-weight: 400;
+    position: relative;
+    z-index: 2;
+    max-width: 540px;
+}
+
+@media (min-width: 768px) {
+    #testimonialSec .tstBx p {
+        font-size: 16.5px;
+        line-height: 1.8;
+    }
+}
+
+#testimonialSec .tstBx .flxD {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 22px;
+    position: relative;
+    z-index: 2;
+}
+
+@media (min-width: 768px) {
+    #testimonialSec .tstBx .flxD {
+        margin-top: 28px;
+    }
+}
+
+#testimonialSec .tstBx .txtBX .name {
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 17px;
+    letter-spacing: 0.5px;
+}
+
+@media (min-width: 768px) {
+    #testimonialSec .tstBx .txtBX .name {
+        font-size: 19px;
+    }
+}
+
+#testimonialSec .tstBx .txtBX .post {
+    font-weight: 400;
+    color: rgba(220, 238, 255, 0.85);
+    font-size: 13.5px;
+    margin-top: 4px;
+}
+
+/* Raju AYUSH Transparent Logo Watermark inside Card */
+#testimonialSec .tstBx .bgIcon {
+    position: absolute;
+    bottom: -25px;
+    right: -30px;
+    opacity: 0.16;
+    max-width: 280px;
+    pointer-events: none;
+    z-index: 1;
+}
+
+#testimonialSec .tstBx .bgIcon img {
+    width: 100%;
+    height: auto;
+    filter: brightness(0) invert(1);
+}
+
+@media (max-width: 768px) {
+    #testimonialSec .tstBx .bgIcon {
+        max-width: 190px;
+        right: -15px;
+        bottom: -10px;
+    }
+}
+
+/* Slider Nav Arrows */
+#testimonialSec .ayur-testi-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    transform: translateY(-50%);
+    pointer-events: none;
+    z-index: 20;
+    padding: 0 10px;
+}
+
+#testimonialSec .ayur-testi-nav button {
+    pointer-events: auto;
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 65, 166, 0.12);
+    border: 1px solid rgba(0, 65, 166, 0.2);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+@media (min-width: 768px) {
+    #testimonialSec .ayur-testi-nav button {
+        width: 46px;
+        height: 46px;
+    }
+}
+
+#testimonialSec .ayur-testi-nav button:hover {
+    background: #0041a6;
+    border-color: #0041a6;
+    transform: scale(1.06);
+    box-shadow: 0 4px 15px rgba(0, 65, 166, 0.3);
+}
+
+#testimonialSec .ayur-testi-nav button svg {
+    width: 15px;
+    height: 15px;
+    fill: #0041a6;
+    transition: fill 0.3s ease;
+}
+
+#testimonialSec .ayur-testi-nav button:hover svg {
+    fill: #ffffff;
+}
+
+#testimonialSec .ayur-testi-nav button.prev-btn svg {
+    transform: rotate(180deg);
+}
+
+/* Carousel Indicators (Dots) */
+#testimonialSec .ayur-testi-dots {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+    gap: 8px;
+}
+
+#testimonialSec .ayur-testi-dots button {
+    background: rgba(0, 65, 166, 0.25);
+    border: none;
+    border-radius: 50%;
+    width: 9px;
+    height: 9px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 0;
+}
+
+#testimonialSec .ayur-testi-dots button.active {
+    background: #0041a6;
+    width: 26px;
+    border-radius: 10px;
+}
+
+
+/* =========================================================
+   2. CONTACT / BOOK AN APPOINTMENT SECTION (#contactSec - Royal Blue)
+   ========================================================= */
+#contactSec {
+    background: linear-gradient(145deg, #021738 0%, #002b70 50%, #0041a6 100%);
+    padding: 60px 0 70px;
+    position: relative;
+    color: #ffffff;
+    font-family: var(--ayur-font-sans);
+    overflow: hidden;
+}
+
+@media (min-width: 768px) {
+    #contactSec {
+        padding: 80px 0 90px;
+    }
+}
+
+@media (min-width: 992px) {
+    #contactSec {
+        padding: 100px 0 110px;
+    }
+}
+
+#contactSec .container {
+    position: relative;
+    z-index: 10;
+    max-width: 1220px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+#contactSec .ayur-contact-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin: 0 -15px;
+}
+
+#contactSec .b1 {
+    width: 100%;
+    padding: 0 15px;
+    margin-bottom: 40px;
+}
+
+#contactSec .b2 {
+    width: 100%;
+    padding: 0 15px;
+}
+
+@media (min-width: 992px) {
+    #contactSec .b1 {
+        width: 41.666667%;
+        margin-bottom: 0;
+    }
+    #contactSec .b2 {
+        width: 58.333333%;
+    }
+}
+
+/* Left Illustration with Raju AYUSH Watermark & Fade Left */
+#contactSec .lftBx {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    will-change: transform, opacity;
+}
+
+#contactSec .lftBx .imgBx {
+    position: relative;
+    max-width: 420px;
+    width: 100%;
+}
+
+#contactSec .lftBx .imgBx .ltImg {
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.2s ease-out;
+}
+
+#contactSec .lftBx .imgBx .bgIcon {
+    max-width: 520px;
+    width: 130%;
+    opacity: 0.18;
+    position: absolute;
+    top: -55px;
+    right: -50px;
+    z-index: 1;
+    pointer-events: none;
+    transition: transform 0.4s ease, opacity 0.4s ease;
+}
+
+@media (max-width: 992px) {
+    #contactSec .lftBx .imgBx .bgIcon {
+        max-width: 420px;
+        top: -35px;
+        right: -30px;
+    }
+}
+
+@media (max-width: 576px) {
+    #contactSec .lftBx .imgBx .bgIcon {
+        max-width: 300px;
+        top: -20px;
+        right: -15px;
+    }
+}
+
+#contactSec .lftBx .imgBx .bgIcon img {
+    width: 100%;
+    height: auto;
+    filter: brightness(0) invert(1);
+}
+
+/* Right Column (The Form) */
+#contactSec .ritBx {
+    position: relative;
+    z-index: 10;
+    will-change: transform, opacity;
+}
+
+#contactSec .ritBx .cMNHead,
+#contactSec .ritBx .ayur-cmn-head {
+    color: #ffffff !important;
+    font-family: var(--ayur-font-serif);
+    font-size: 28px;
+    font-weight: 400;
+    margin-bottom: 25px;
+}
+
+@media (min-width: 768px) {
+    #contactSec .ritBx .cMNHead,
+    #contactSec .ritBx .ayur-cmn-head {
+        font-size: 36px;
+        margin-bottom: 32px;
+    }
+}
+
+@media (min-width: 992px) {
+    #contactSec .ritBx .cMNHead,
+    #contactSec .ritBx .ayur-cmn-head {
+        font-size: 42px;
+        margin-bottom: 38px;
+    }
+}
+
+#contactSec .contact-form {
+    width: 100%;
+}
+
+#contactSec .form-row {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -12px;
+}
+
+#contactSec .form-col-6 {
+    width: 100%;
+    padding: 0 12px;
+    margin-bottom: 16px;
+}
+
+@media (min-width: 576px) {
+    #contactSec .form-col-6 {
+        width: 50%;
+    }
+}
+
+#contactSec .form-col-12 {
+    width: 100%;
+    padding: 0 12px;
+    margin-bottom: 16px;
+}
+
+#contactSec .form-group {
+    position: relative;
+    width: 100%;
+}
+
+/* Minimalist White Underline Inputs */
+#contactSec .form-control {
+    display: block;
+    width: 100%;
+    font-family: var(--ayur-font-sans);
+    font-size: 14px;
+    font-weight: 400;
+    color: #ffffff;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.85);
+    border-radius: 0;
+    padding: 8px 0;
+    height: 48px;
+    outline: none;
+    box-shadow: none !important;
+    transition: border-color 0.3s ease;
+}
+
+@media (min-width: 768px) {
+    #contactSec .form-control {
+        font-size: 15.5px;
+        height: 52px;
+    }
+}
+
+#contactSec .form-control:focus {
+    border-bottom-color: #60a5fa;
+}
+
+#contactSec .form-control::placeholder {
+    color: rgba(255, 255, 255, 0.88);
+    font-weight: 400;
+}
+
+#contactSec textarea.form-control {
+    min-height: 60px;
+    padding-top: 14px;
+    resize: vertical;
+}
+
+/* Select Dropdown */
+#contactSec select.form-control {
+    cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 4px center;
+    background-size: 16px;
+    padding-right: 28px;
+}
+
+#contactSec select.form-control option {
+    background-color: #002b70;
+    color: #ffffff;
+}
+
+/* Custom Calendar & Clock Picker Icons */
+#contactSec input[type="date"]::-webkit-calendar-picker-indicator,
+#contactSec input[type="time"]::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+    cursor: pointer;
+    opacity: 0.85;
+}
+
+/* Submit Button */
+#contactSec .getApnt {
+    background: #0041A6;
+    border-radius: 5px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: 0.3px;
+    padding: 13px 34px;
+    margin-top: 14px;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 6px 20px rgba(0, 65, 166, 0.3);
+    transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+@media (min-width: 768px) {
+    #contactSec .getApnt {
+        font-size: 15.5px;
+        padding: 15px 40px;
+    }
+}
+
+#contactSec .getApnt:hover {
+    background: #003080;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(0, 65, 166, 0.45);
+}
+
+#contactSec .getApnt.hoveranim::before {
+    background: #ffffff;
+}
+
+#contactSec .getApnt.hoveranim:hover span {
+    color: #0041A6;
+}
+
+#contactSec .bookemsg {
+    margin-top: 15px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+#contactSec .bookemsg.success {
+    color: var(--ayur-lime);
+}
+
+
+/* =========================================================
+   3. FAQ SECTION (#faqSec)
+   ========================================================= */
+#faqSec {
+    position: relative;
+    background: var(--ayur-faq-bg);
+    padding: 60px 0 70px;
+    overflow: hidden;
+    font-family: var(--ayur-font-sans);
+}
+
+@media (min-width: 576px) {
+    #faqSec {
+        padding: 70px 0 85px;
+    }
+}
+
+@media (min-width: 768px) {
+    #faqSec {
+        padding: 80px 0 100px;
+    }
+}
+
+@media (min-width: 992px) {
+    #faqSec {
+        padding: 95px 0 120px;
+    }
+}
+
+/* Falling Botanical Leaf in FAQ (Top to Down Continuous Loop) */
+#faqSec .anim3 {
+    position: absolute;
+    top: -15%;
+    right: 8%;
+    z-index: 1;
+    pointer-events: none;
+    animation: ayurFallingLeaf 22s linear infinite 2s;
+}
+
+#faqSec .anim3 img {
+    max-width: 140px;
+    height: auto;
+    opacity: 0.9;
+}
+
+@media (max-width: 992px) {
+    #faqSec .anim3 {
+        right: 4%;
+    }
+    #faqSec .anim3 img {
+        max-width: 100px;
+    }
+}
+
+@media (max-width: 576px) {
+    #faqSec .anim3 {
+        display: none;
+    }
+}
+
+#faqSec .container {
+    position: relative;
+    z-index: 10;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+#faqSec .Headbx {
+    text-align: center;
+    margin-bottom: 35px;
+    will-change: transform, opacity;
+}
+
+@media (min-width: 768px) {
+    #faqSec .Headbx {
+        margin-bottom: 45px;
+    }
+}
+
+@media (min-width: 992px) {
+    #faqSec .Headbx {
+        margin-bottom: 55px;
+    }
+}
+
+#faqSec .Headbx .cMNHead {
+    color: #0041a6;
+    font-family: var(--ayur-font-serif);
+    margin-bottom: 8px;
+}
+
+#faqSec .Headbx p {
+    color: #474747;
+    font-size: 15px;
+    margin: 0 auto;
+    max-width: 620px;
+    line-height: 1.6;
+}
+
+@media (min-width: 992px) {
+    #faqSec .Headbx p {
+        font-size: 17px;
+    }
+}
+
+/* FAQ Accordion List */
+#faqSec .ayur-accordion {
+    max-width: 980px;
+    margin: 0 auto;
+}
+
+#faqSec .accordion-item {
+    background: #ffffff !important;
+    border: 1.5px solid #0041a6 !important;
+    border-radius: 16px !important;
+    box-shadow: 0 4px 14px rgba(0, 65, 166, 0.08) !important;
+    padding: 14px 20px !important;
+    margin-bottom: 14px !important;
+    transition: box-shadow 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
+    will-change: transform, opacity;
+}
+
+@media (min-width: 576px) {
+    #faqSec .accordion-item {
+        margin-bottom: 18px !important;
+        padding: 18px 28px !important;
+    }
+}
+
+#faqSec .accordion-item:hover {
+    border-color: #0041a6 !important;
+    box-shadow: 0 6px 22px rgba(0, 65, 166, 0.16) !important;
+}
+
+#faqSec .accordion-item.active {
+    border-color: #0041a6 !important;
+    box-shadow: 0 8px 26px rgba(0, 65, 166, 0.18) !important;
+}
+
+#faqSec .accordion-header {
+    margin: 0;
+}
+
+#faqSec .accordion-button {
+    font-weight: 500;
+    font-family: var(--ayur-font-serif);
+    color: #0041a6;
+    background: none;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    padding: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-align: left;
+    font-size: 17px;
+    line-height: 1.4;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+@media (min-width: 576px) {
+    #faqSec .accordion-button {
+        font-size: 19px;
+    }
+}
+
+@media (min-width: 768px) {
+    #faqSec .accordion-button {
+        font-size: 21px;
+    }
+}
+
+@media (min-width: 992px) {
+    #faqSec .accordion-button {
+        font-size: 23px;
+    }
+}
+
+#faqSec .accordion-button:hover {
+    color: #4e9525;
+}
+
+#faqSec .accordion-button .toggle-icon {
+    font-size: 24px;
+    font-weight: 300;
+    color: #262262;
+    line-height: 1;
+    margin-left: 15px;
+    flex-shrink: 0;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+#faqSec .accordion-item.active .accordion-button .toggle-icon {
+    color: var(--ayur-green);
+}
+
+/* Accordion Body Content */
+#faqSec .accordion-collapse {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s cubic-bezier(0, 1, 0, 1);
+}
+
+#faqSec .accordion-item.active .accordion-collapse {
+    max-height: 1000px;
+    transition: max-height 0.5s ease-in-out;
+}
+
+#faqSec .accordion-body {
+    padding: 16px 0 6px;
+    color: var(--ayur-text);
+    font-size: 14px;
+    line-height: 1.75;
+}
+
+@media (min-width: 768px) {
+    #faqSec .accordion-body {
+        font-size: 15.5px;
+        line-height: 1.8;
+    }
+}
+
+#faqSec .accordion-body p {
+    color: var(--ayur-text);
+    margin-bottom: 12px;
+}
+
+#faqSec .accordion-body b,
+#faqSec .accordion-body strong {
+    color: #1a1a19;
+    font-weight: 600;
+}
+
+#faqSec .accordion-body a {
+    color: var(--ayur-green);
+    font-weight: 600;
+    text-decoration: underline;
+    transition: color 0.3s ease;
+}
+
+#faqSec .accordion-body a:hover {
+    color: var(--ayur-accent);
+}
+
+#faqSec .accordion-body ul {
+    padding-left: 20px;
+    margin: 12px 0 16px;
+}
+
+#faqSec .accordion-body ul li {
+    color: var(--ayur-text);
+    margin-bottom: 10px;
+    list-style: disc;
+    line-height: 1.65;
+}

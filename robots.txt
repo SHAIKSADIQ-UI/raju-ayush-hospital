@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Hostinger Sitemap Index
+Sitemap: https://YOUR-DOMAIN.com/sitemap.xml

@@ -1,0 +1,127 @@
+# ==============================================================================
+# Hostinger Apache / LiteSpeed Hosting Configuration for Raju AYUSH Hospital
+# MAXIMUM SPEED & PERFORMANCE CONFIGURATION
+# ==============================================================================
+
+# 1. Set Default Character Encoding to UTF-8
+AddDefaultCharset UTF-8
+
+# 2. Prevent Directory Browsing
+Options -Indexes
+
+# 3. Enable Brotli Compression (Fastest Modern Compression)
+<IfModule mod_brotli.c>
+  AddOutputFilterByType BROTLI_COMPRESS text/html text/plain text/xml text/css
+  AddOutputFilterByType BROTLI_COMPRESS application/javascript application/x-javascript application/json
+  AddOutputFilterByType BROTLI_COMPRESS image/svg+xml application/vnd.ms-fontobject application/x-font-ttf font/opentype
+  AddOutputFilterByType BROTLI_COMPRESS font/woff font/woff2 font/ttf
+  AddOutputFilterByType BROTLI_COMPRESS application/xhtml+xml application/xml application/rss+xml
+  AddOutputFilterByType BROTLI_COMPRESS application/manifest+json
+</IfModule>
+
+# 4. Enable Gzip / Deflate Compression (Universal Fallback)
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css
+  AddOutputFilterByType DEFLATE application/javascript application/x-javascript application/json
+  AddOutputFilterByType DEFLATE image/svg+xml application/vnd.ms-fontobject application/x-font-ttf font/opentype
+  AddOutputFilterByType DEFLATE font/woff font/woff2 font/ttf
+  AddOutputFilterByType DEFLATE application/xhtml+xml application/xml application/rss+xml
+  AddOutputFilterByType DEFLATE application/manifest+json
+
+  # Remove browser bugs for very old browsers
+  BrowserMatch ^Mozilla/4 gzip-only-text/html
+  BrowserMatch ^Mozilla/4\.0[678] no-gzip
+  BrowserMatch \bMSIE !no-gzip !gzip-only-text/html
+  Header append Vary Accept-Encoding
+</IfModule>
+
+# 5. Leverage Browser Caching for Instant Repeat Loads
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresDefault "access plus 1 month"
+  
+  # HTML Documents — revalidate for fresh content
+  ExpiresByType text/html "access plus 0 seconds"
+  
+  # Data / JSON
+  ExpiresByType application/json "access plus 0 seconds"
+  ExpiresByType application/xml "access plus 0 seconds"
+  ExpiresByType text/xml "access plus 0 seconds"
+  
+  # CSS and JavaScript — 1 year immutable
+  ExpiresByType text/css "access plus 1 year"
+  ExpiresByType application/javascript "access plus 1 year"
+  ExpiresByType text/javascript "access plus 1 year"
+  
+  # Media / Images — 1 year immutable
+  ExpiresByType image/jpeg "access plus 1 year"
+  ExpiresByType image/png "access plus 1 year"
+  ExpiresByType image/webp "access plus 1 year"
+  ExpiresByType image/gif "access plus 1 year"
+  ExpiresByType image/svg+xml "access plus 1 year"
+  ExpiresByType image/x-icon "access plus 1 year"
+  ExpiresByType image/avif "access plus 1 year"
+  
+  # Web Fonts — 1 year immutable
+  ExpiresByType font/woff2 "access plus 1 year"
+  ExpiresByType font/woff "access plus 1 year"
+  ExpiresByType font/ttf "access plus 1 year"
+  ExpiresByType application/font-woff "access plus 1 year"
+  ExpiresByType application/font-woff2 "access plus 1 year"
+  ExpiresByType application/vnd.ms-fontobject "access plus 1 year"
+</IfModule>
+
+# 6. Cache-Control & Performance Headers
+<IfModule mod_headers.c>
+  # Images — immutable cache
+  <FilesMatch "\.(jpg|jpeg|png|gif|webp|avif|ico|svg)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+
+  # CSS and JS — immutable cache
+  <FilesMatch "\.(css|js)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+
+  # Fonts — immutable cache & CORS
+  <FilesMatch "\.(woff|woff2|ttf|eot|otf)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+    Header set Access-Control-Allow-Origin "*"
+  </FilesMatch>
+
+  # HTML — fresh validation
+  <FilesMatch "\.(html|htm)$">
+    Header set Cache-Control "no-cache, no-store, must-revalidate"
+    Header set Pragma "no-cache"
+    Header set Expires "0"
+  </FilesMatch>
+
+  # Keep-Alive
+  Header set Connection keep-alive
+
+  # Security headers
+  Header set X-Content-Type-Options "nosniff"
+  Header set X-Frame-Options "SAMEORIGIN"
+  Header set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>
+
+# 7. Disable ETags (eliminates unnecessary header overhead)
+<IfModule mod_headers.c>
+  Header unset ETag
+</IfModule>
+FileETag None
+
+# 8. LiteSpeed Web Server Optimizations (for Hostinger LiteSpeed)
+<IfModule Litespeed>
+  CacheLookup on
+  ExpiresDefault "access plus 1 year"
+</IfModule>
+
+# 9. Optional HTTPS & Clean URL Rewrites
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  
+  # Force HTTPS (Uncomment the next 2 lines after setting up SSL certificate on Hostinger)
+  # RewriteCond %{HTTPS} off
+  # RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+</IfModule>

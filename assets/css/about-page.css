@@ -1,0 +1,677 @@
+html { scroll-behavior: smooth; }
+
+/* ============================================
+   Scrollbar Hidden Completely Across Browsers
+   ============================================ */
+html, body {
+    -ms-overflow-style: none !important;  /* IE and Edge */
+    scrollbar-width: none !important;  /* Firefox */
+}
+::-webkit-scrollbar,
+body::-webkit-scrollbar,
+html::-webkit-scrollbar,
+*::-webkit-scrollbar {
+    display: none !important;
+    width: 0 !important;
+    height: 0 !important;
+}
+
+/* ============================================
+   Raju AYUSH Hospital — About Page Custom Styles
+   Colors: Emerald Green (#275F49, #0e6937), Lime (#bee356), Gold (#f9d566), Deep Green (#062416)
+   ============================================ */
+
+/* --- Page Banner Hero Section (Royal Blue Luxury) --- */
+#PageBanner,
+#PageBanner.Hght {
+    position: relative !important;
+    min-height: 480px !important;
+    height: auto !important;
+    background: linear-gradient(135deg, #021738 0%, #002b70 50%, #0041a6 100%) !important;
+    overflow: hidden !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: flex-end !important;
+    padding: 130px 0 65px !important;
+}
+
+#PageBanner .bnnr {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: 85% center !important;
+    z-index: 1 !important;
+    filter: brightness(1.0) contrast(1.05) saturate(1.08) !important;
+}
+
+#PageBanner::after {
+    content: '' !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    background: linear-gradient(90deg, rgba(2, 23, 56, 0.92) 0%, rgba(0, 43, 112, 0.75) 42%, rgba(0, 65, 166, 0.28) 72%, rgba(0, 65, 166, 0.05) 100%),
+                linear-gradient(180deg, rgba(2, 23, 56, 0.4) 0%, transparent 40%, rgba(2, 23, 56, 0.7) 100%) !important;
+    pointer-events: none !important;
+    z-index: 2 !important;
+}
+
+#PageBanner .BannerContent {
+    position: relative !important;
+    left: auto !important;
+    right: auto !important;
+    top: auto !important;
+    bottom: auto !important;
+    margin: 0 !important;
+    width: 100% !important;
+    z-index: 10 !important;
+    display: block !important;
+}
+
+#PageBanner .BannerContent .container {
+    display: block !important;
+    height: auto !important;
+    padding-left: 24px !important;
+    padding-right: 24px !important;
+}
+
+#PageBanner .content-wrapper,
+#PageBanner .BannerContent .content-wrapper {
+    padding-bottom: 0 !important;
+    padding-top: 0 !important;
+    max-width: 820px !important;
+}
+
+#PageBanner .bnrHead {
+    color: #ffffff !important;
+    font-size: clamp(32px, 4.4vw, 48px) !important;
+    font-weight: 700 !important;
+    font-family: "IvyMode", Georgia, serif !important;
+    line-height: 1.2 !important;
+    letter-spacing: -0.5px !important;
+    text-shadow: 0 3px 20px rgba(0, 0, 0, 0.75) !important;
+    margin-bottom: 16px !important;
+}
+
+#PageBanner .SubT {
+    color: #f0fdf4 !important;
+    font-size: clamp(15px, 1.5vw, 18px) !important;
+    font-weight: 400 !important;
+    line-height: 1.65 !important;
+    text-shadow: 0 2px 14px rgba(0, 0, 0, 0.85) !important;
+    max-width: 740px !important;
+}
+
+/* Mobile & Tablet Responsive for Hero Banner */
+@media (max-width: 991px) {
+    #PageBanner,
+    #PageBanner.Hght {
+        min-height: 440px !important;
+        padding: 130px 16px 45px !important;
+    }
+    #PageBanner .bnnr {
+        object-position: 80% 50% !important;
+        filter: brightness(0.98) contrast(1.05) saturate(1.08) !important;
+    }
+    #PageBanner::after {
+        background: linear-gradient(180deg, rgba(4, 22, 13, 0.75) 0%, rgba(4, 22, 13, 0.45) 45%, rgba(4, 22, 13, 0.35) 70%, rgba(4, 22, 13, 0.75) 100%),
+                    linear-gradient(90deg, rgba(4, 22, 13, 0.68) 0%, rgba(4, 22, 13, 0.25) 70%, transparent 100%) !important;
+    }
+    #PageBanner .BannerContent .container {
+        padding-top: 0 !important;
+    }
+    #PageBanner .bnrHead {
+        font-size: clamp(26px, 6.8vw, 36px) !important;
+        line-height: 1.25 !important;
+        margin-bottom: 12px !important;
+        text-shadow: 0 2px 16px rgba(0, 0, 0, 0.85) !important;
+    }
+    #PageBanner .SubT {
+        font-size: 15px !important;
+        line-height: 1.55 !important;
+        text-shadow: 0 2px 12px rgba(0, 0, 0, 0.9) !important;
+    }
+}
+
+@media (max-width: 480px) {
+    #PageBanner,
+    #PageBanner.Hght {
+        min-height: 420px !important;
+        padding: 125px 14px 38px !important;
+    }
+    #PageBanner .bnnr {
+        object-position: 78% 40% !important;
+    }
+    #PageBanner .bnrHead {
+        font-size: 27px !important;
+        line-height: 1.25 !important;
+        margin-bottom: 10px !important;
+    }
+    #PageBanner .SubT {
+        font-size: 14px !important;
+        line-height: 1.5 !important;
+    }
+/* --- Specific Hero Banner for Diseases Page --- */
+.diseasesPage #PageBanner,
+.diseasesPage #PageBanner.Hght {
+    min-height: 520px !important;
+    padding: 140px 0 75px !important;
+}
+
+.diseasesPage #PageBanner .bnnr {
+    object-position: 72% 35% !important;
+    filter: brightness(0.95) contrast(1.05) saturate(1.05) !important;
+}
+
+.diseasesPage #PageBanner::after {
+    background: linear-gradient(90deg, rgba(5, 26, 15, 0.85) 0%, rgba(5, 26, 15, 0.65) 45%, rgba(5, 26, 15, 0.2) 75%, rgba(5, 26, 15, 0.05) 100%),
+                linear-gradient(180deg, rgba(5, 26, 15, 0.35) 0%, transparent 40%, rgba(5, 26, 15, 0.65) 100%) !important;
+}
+
+@media (max-width: 991px) {
+    .diseasesPage #PageBanner,
+    .diseasesPage #PageBanner.Hght {
+        min-height: 490px !important;
+        padding: 140px 20px 36px !important;
+    }
+    .diseasesPage #PageBanner .bnnr {
+        object-position: 55% 15% !important;
+    }
+    .diseasesPage #PageBanner::after {
+        background: linear-gradient(180deg, rgba(4, 22, 13, 0.5) 0%, rgba(4, 22, 13, 0.15) 35%, rgba(4, 22, 13, 0.6) 65%, rgba(4, 22, 13, 0.92) 100%) !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .diseasesPage #PageBanner,
+    .diseasesPage #PageBanner.Hght {
+        min-height: 480px !important;
+        padding: 130px 16px 32px !important;
+    }
+    .diseasesPage #PageBanner .bnnr {
+        object-position: 54% 12% !important;
+    }
+    .diseasesPage #PageBanner .bnrHead {
+        font-size: 28px !important;
+        margin-bottom: 8px !important;
+    }
+    .diseasesPage #PageBanner .SubT {
+        font-size: 14px !important;
+        line-height: 1.45 !important;
+    }
+}
+
+/* --- ECG Heartbeat Divider (Desktop & Mobile) --- */
+.wh-ecg-divider {
+    width: 100%;
+    padding: 24px 0 32px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+    z-index: 15;
+    background: transparent;
+    box-sizing: border-box;
+}
+
+.wh-ecg-track {
+    width: 100%;
+    max-width: 920px;
+    height: 52px;
+    overflow: hidden;
+    position: relative;
+    -webkit-mask-image: linear-gradient(to right, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 14%, rgba(0,0,0,1) 86%, rgba(0,0,0,0) 100%);
+    mask-image: linear-gradient(to right, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 14%, rgba(0,0,0,1) 86%, rgba(0,0,0,0) 100%);
+}
+
+.wh-ecg-flow {
+    display: flex !important;
+    width: 200% !important;
+    height: 100% !important;
+    animation: whEcgMove 4s linear infinite !important;
+    will-change: transform;
+    transform: translate3d(0, 0, 0);
+}
+
+.wh-ecg-svg {
+    width: 50% !important;
+    height: 100% !important;
+    flex-shrink: 0 !important;
+    display: block !important;
+}
+
+.wh-ecg-svg path {
+    stroke: #275F49;
+    stroke-width: 3.2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+@keyframes whEcgMove {
+    0% {
+        transform: translate3d(0, 0, 0);
+    }
+    100% {
+        transform: translate3d(-50%, 0, 0);
+    }
+}
+
+@media (max-width: 768px) {
+    .wh-ecg-divider {
+        padding: 16px 0 22px 0;
+    }
+    .wh-ecg-track {
+        height: 40px;
+    }
+    .wh-ecg-flow {
+        animation-duration: 3.2s !important;
+    }
+    .wh-ecg-svg path {
+        stroke-width: 2.8;
+    }
+}
+    100% {
+        transform: translate3d(-50%, 0, 0);
+    }
+}
+
+@media (max-width: 768px) {
+    .wh-ecg-divider {
+        margin: 18px 0 24px 0;
+    }
+    .wh-ecg-divider-track {
+        height: 38px;
+    }
+    .wh-ecg-divider-track svg {
+        animation-duration: 4.2s;
+    }
+}
+    100% { transform: translateX(-50%); }
+}
+
+/* --- Doctor Section Refinements --- */
+.aboutPage #DoctorSays {
+    background: #0e6937;
+    position: relative;
+    overflow: hidden;
+}
+.aboutPage #DoctorSays .ctntBox .imgBox {
+    border: 4px solid rgba(249, 213, 102, 0.45);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.35);
+}
+.aboutPage #DoctorSays .ctntBox .InfoBox .Name {
+    color: #f9d566 !important;
+    font-family: "IvyMode", serif !important;
+}
+
+/* ============================================
+   Counter Section (#cOuNtSec) — Doctor Based Stats
+   ============================================ */
+.aboutPage #cOuNtSec {
+    background: linear-gradient(135deg, #021738 0%, #002b70 50%, #0041a6 100%);
+    padding: 70px 0;
+    position: relative;
+}
+
+.aboutPage #cOuNtSec .countFlx {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    background: rgba(255, 255, 255, 0.08) !important;
+    border: 1.5px solid rgba(96, 165, 250, 0.35) !important;
+    backdrop-filter: blur(12px) !important;
+    -webkit-backdrop-filter: blur(12px) !important;
+    border-radius: 16px !important;
+    box-shadow: 0 20px 48px rgba(0, 20, 60, 0.35) !important;
+    position: relative !important;
+    overflow: hidden !important;
+}
+
+.aboutPage #cOuNtSec .countFlx .fade1 {
+    display: none !important;
+}
+
+.aboutPage #cOuNtSec .countFlx .cmnD {
+    flex: 1 1 0 !important;
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 16px !important;
+    padding: 32px 16px !important;
+    position: relative !important;
+    z-index: 1 !important;
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.3s ease !important;
+}
+
+.aboutPage #cOuNtSec .countFlx .cmnD:not(:last-child)::after {
+    content: '' !important;
+    position: absolute !important;
+    right: 0 !important;
+    top: 20% !important;
+    height: 60% !important;
+    width: 1px !important;
+    background: linear-gradient(180deg, transparent, rgba(96, 165, 250, 0.35), transparent) !important;
+    pointer-events: none !important;
+}
+
+.aboutPage #cOuNtSec .countFlx .cmnD:hover {
+    background: rgba(255, 255, 255, 0.12) !important;
+    transform: translateY(-4px) !important;
+}
+
+/* Icon Box */
+.aboutPage #cOuNtSec .countFlx .cmnD .icon {
+    flex-shrink: 0 !important;
+    width: 56px !important;
+    height: 56px !important;
+    min-width: 56px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    background: rgba(96, 165, 250, 0.18) !important;
+    border: 1.5px solid rgba(96, 165, 250, 0.45) !important;
+    border-radius: 14px !important;
+    box-shadow: 0 4px 16px rgba(0, 65, 166, 0.25) !important;
+    transition: transform 0.3s ease, background 0.3s ease, border-color 0.3s ease !important;
+}
+
+.aboutPage #cOuNtSec .countFlx .cmnD:hover .icon {
+    transform: scale(1.08) !important;
+    background: rgba(96, 165, 250, 0.3) !important;
+    border-color: rgba(96, 165, 250, 0.8) !important;
+}
+
+.aboutPage #cOuNtSec .countFlx .cmnD .icon svg {
+    width: 28px !important;
+    height: 28px !important;
+    max-width: 28px !important;
+    min-width: 28px !important;
+    stroke: #93c5fd !important;
+    fill: none !important;
+    stroke-width: 2.2 !important;
+    display: block !important;
+    filter: drop-shadow(0 2px 6px rgba(96, 165, 250, 0.5)) !important;
+}
+
+/* Text & Counter */
+.aboutPage #cOuNtSec .countFlx .cmnD .txtBx {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+}
+
+.aboutPage #cOuNtSec .countFlx .cmnD .txtBx .num {
+    color: #ffffff !important;
+    font-size: 34px !important;
+    font-weight: 700 !important;
+    font-family: "IvyMode", 'Inter', Georgia, serif !important;
+    line-height: 1.1 !important;
+    letter-spacing: -0.5px !important;
+    text-shadow: 0 2px 14px rgba(96, 165, 250, 0.6) !important;
+}
+
+.aboutPage #cOuNtSec .countFlx .cmnD .txtBx .txt {
+    color: rgba(255, 255, 255, 0.92) !important;
+    font-size: 14px !important;
+    font-weight: 600 !important;
+    margin-top: 4px !important;
+    line-height: 1.35 !important;
+    letter-spacing: 0.2px !important;
+    white-space: nowrap !important;
+}
+
+/* Responsive Counter Section */
+@media (max-width: 991px) {
+    .aboutPage #cOuNtSec {
+        padding: 50px 0;
+    }
+    .aboutPage #cOuNtSec .countFlx {
+        flex-wrap: wrap !important;
+    }
+    .aboutPage #cOuNtSec .countFlx .cmnD {
+        flex: 0 0 50% !important;
+        max-width: 50% !important;
+        padding: 24px 18px !important;
+        justify-content: flex-start !important;
+    }
+    .aboutPage #cOuNtSec .countFlx .cmnD:nth-child(even)::after {
+        display: none !important;
+    }
+    .aboutPage #cOuNtSec .countFlx .cmnD:nth-child(1),
+    .aboutPage #cOuNtSec .countFlx .cmnD:nth-child(2) {
+        border-bottom: 1px solid rgba(190, 227, 86, 0.2) !important;
+    }
+}
+
+@media (max-width: 576px) {
+    .aboutPage #cOuNtSec {
+        padding: 40px 15px;
+    }
+    .aboutPage #cOuNtSec .countFlx .cmnD {
+        flex: 0 0 100% !important;
+        max-width: 100% !important;
+        padding: 18px 20px !important;
+        gap: 16px !important;
+        justify-content: flex-start !important;
+    }
+    .aboutPage #cOuNtSec .countFlx .cmnD::after {
+        display: none !important;
+    }
+    .aboutPage #cOuNtSec .countFlx .cmnD:not(:last-child) {
+        border-bottom: 1px solid rgba(190, 227, 86, 0.18) !important;
+    }
+    .aboutPage #cOuNtSec .countFlx .cmnD .icon {
+        width: 48px !important;
+        height: 48px !important;
+        min-width: 48px !important;
+    }
+    .aboutPage #cOuNtSec .countFlx .cmnD .icon svg {
+        width: 24px !important;
+        height: 24px !important;
+        max-width: 24px !important;
+        min-width: 24px !important;
+    }
+    .aboutPage #cOuNtSec .countFlx .cmnD .txtBx .num {
+        font-size: 28px !important;
+    }
+    .aboutPage #cOuNtSec .countFlx .cmnD .txtBx .txt {
+        font-size: 13px !important;
+        white-space: normal !important;
+    }
+}
+
+/* --- Motto/Tagline Banner --- */
+.wh-motto-banner {
+    display: none;
+    background: linear-gradient(135deg, #1a237e 0%, #0d47a1 50%, #275F49 100%);
+    padding: 55px 0;
+    text-align: center;
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+}
+.wh-motto-banner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+.wh-motto-banner__text {
+    font-size: 22px;
+    font-weight: 600;
+    max-width: 850px;
+    margin: 0 auto;
+    line-height: 1.6;
+    position: relative;
+    z-index: 1;
+    color: #ffffff;
+}
+.wh-motto-banner__text em {
+    font-style: normal;
+    color: #90caf9;
+}
+.wh-motto-banner__tagline {
+    font-size: 16px;
+    color: #e0f2fe;
+    font-weight: 500;
+    margin-top: 14px;
+    position: relative;
+    z-index: 1;
+    line-height: 1.7;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+}
+
+@media (max-width: 768px) {
+    .wh-motto-banner__text {
+        font-size: 18px;
+        padding: 0 15px;
+    }
+}
+
+/* --- Disease Cards Equal Size, Logo Watermark & Hover Effects --- */
+.diseasesPage #DiseaseSec {
+    padding: 60px 0 80px;
+    position: relative;
+}
+
+.diseasesPage #DiseaseSec .row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.diseasesPage #DiseaseSec .row > [class*="col-"] {
+    display: flex;
+    margin-bottom: 30px;
+}
+
+.diseasesPage #DiseaseSec .dSBx {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    min-height: 200px;
+    border-radius: 20px;
+    background-color: #ffffff;
+    box-shadow: 0px 8px 30px rgba(10, 62, 33, 0.08);
+    overflow: hidden;
+    transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.4s ease;
+    position: relative;
+}
+
+.diseasesPage #DiseaseSec .dSBx:hover {
+    transform: translateY(-6px);
+    box-shadow: 0px 16px 40px rgba(10, 62, 33, 0.15);
+}
+
+.diseasesPage #DiseaseSec .dSBx .imgBx {
+    width: 230px;
+    min-width: 230px;
+    height: auto;
+    overflow: hidden;
+    position: relative;
+}
+
+.diseasesPage #DiseaseSec .dSBx .imgBx img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.7s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.diseasesPage #DiseaseSec .dSBx:hover .imgBx img {
+    transform: scale(1.08);
+}
+
+.diseasesPage #DiseaseSec .dSBx .txtBx {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    padding: 24px 28px;
+    background: #ffffff;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.diseasesPage #DiseaseSec .dSBx .txtBx .fade1 {
+    position: absolute;
+    top: -35px;
+    right: -50px;
+    width: 275px;
+    height: 275px;
+    opacity: 0.13;
+    pointer-events: none;
+    z-index: 0;
+    transition: opacity 0.4s ease, transform 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.diseasesPage #DiseaseSec .dSBx:hover .txtBx .fade1 {
+    opacity: 0.24;
+    transform: scale(1.05) rotate(3deg);
+}
+
+.diseasesPage #DiseaseSec .dSBx .txtBx .fade1 img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+    filter: brightness(0) saturate(100%) invert(31%) sepia(29%) saturate(1025%) hue-rotate(106deg) brightness(94%) contrast(89%); /* Raju AYUSH Green #275F49 */
+}
+
+.diseasesPage #DiseaseSec .dSBx .txtBx .title {
+    color: #275F49;
+    font-size: 21px;
+    font-weight: 600;
+    font-family: "IvyMode", serif;
+    margin-bottom: 10px;
+    line-height: 1.3;
+    position: relative;
+    z-index: 2;
+}
+
+.diseasesPage #DiseaseSec .dSBx .txtBx p {
+    font-size: 14px;
+    color: #555555;
+    font-weight: 400;
+    line-height: 1.6;
+    margin-bottom: 0;
+    position: relative;
+    z-index: 2;
+}
+
+@media (max-width: 991px) {
+    .diseasesPage #DiseaseSec .dSBx {
+        flex-direction: column;
+    }
+    .diseasesPage #DiseaseSec .dSBx .imgBx {
+        width: 100%;
+        min-width: 100%;
+        height: 210px;
+    }
+    .diseasesPage #DiseaseSec .dSBx .txtBx .fade1 {
+        width: 230px;
+        height: 230px;
+        top: -30px;
+        right: -40px;
+    }
+}
+
+@media (max-width: 576px) {
+    .diseasesPage #DiseaseSec .dSBx .txtBx .fade1 {
+        width: 190px;
+        height: 190px;
+        top: -25px;
+        right: -35px;
+        opacity: 0.10;
+    }
+}

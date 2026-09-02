@@ -1,0 +1,1131 @@
+/* ==========================================================================
+   RAJU AYUSH HOSPITAL - DEDICATED CONTACT US PAGE STYLESHEET
+   Accurately ported from original Ayurheritage design architecture
+   ========================================================================== */
+
+/* Typography Definition */
+@font-face {
+    font-family: "IvyMode";
+    src: url("../new-css/css/fonts/IvyMode-Regular.woff2") format("woff2");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: "IvyMode";
+    src: url("../new-css/css/fonts/IvyMode-SemiBold.woff2") format("woff2");
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: "IvyMode";
+    src: url("../new-css/css/fonts/IvyMode-Bold.woff2") format("woff2");
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: "Metropolis";
+    src: url("../new-css/css/fonts/Metropolis-Regular.woff2") format("woff2");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: "Metropolis";
+    src: url("../new-css/css/fonts/Metropolis-Medium.woff2") format("woff2");
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: "Metropolis";
+    src: url("../new-css/css/fonts/Metropolis-SemiBold.woff2") format("woff2");
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: "Metropolis";
+    src: url("../new-css/css/fonts/Metropolis-Bold.woff2") format("woff2");
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Base Page Wrapper */
+.contactPage {
+    font-family: "Metropolis", sans-serif;
+    color: #4a4b4b;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* Organic Floating Leaf Animations */
+@keyframes leafFloat1 {
+    0% {
+        transform: translateY(0px) rotate(0deg) scale(1);
+    }
+    33% {
+        transform: translateY(-18px) translateX(6px) rotate(8deg) scale(1.02);
+    }
+    66% {
+        transform: translateY(12px) translateX(-4px) rotate(-6deg) scale(0.98);
+    }
+    100% {
+        transform: translateY(0px) rotate(0deg) scale(1);
+    }
+}
+
+@keyframes leafFloat2 {
+    0% {
+        transform: translateY(0px) rotate(0deg) scale(1);
+    }
+    33% {
+        transform: translateY(16px) translateX(-8px) rotate(-10deg) scale(1.03);
+    }
+    66% {
+        transform: translateY(-14px) translateX(5px) rotate(7deg) scale(0.97);
+    }
+    100% {
+        transform: translateY(0px) rotate(0deg) scale(1);
+    }
+}
+
+@keyframes leafSway {
+    0%, 100% {
+        transform: rotate(0deg) translateY(0);
+    }
+    50% {
+        transform: rotate(12deg) translateY(-10px);
+    }
+}
+
+/* 1. Page Banner Hero Section */
+.contactPage #PageBanner,
+.contactPage #PageBanner.Hght {
+    position: relative !important;
+    min-height: 320px !important;
+    height: auto !important;
+    background: linear-gradient(135deg, #062416 0%, #135534 100%) !important;
+    overflow: hidden !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: flex-end !important;
+    padding: 110px 0 35px !important;
+}
+
+.contactPage #PageBanner .bnnr {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: 80% center !important;
+    z-index: 1 !important;
+    filter: brightness(0.96) contrast(1.06) saturate(1.08) !important;
+}
+
+.contactPage #PageBanner::after {
+    content: '' !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    background: linear-gradient(90deg, rgba(5, 26, 15, 0.90) 0%, rgba(5, 26, 15, 0.72) 42%, rgba(5, 26, 15, 0.25) 75%, rgba(5, 26, 15, 0.05) 100%),
+                linear-gradient(180deg, rgba(5, 26, 15, 0.40) 0%, transparent 40%, rgba(5, 26, 15, 0.65) 100%) !important;
+    pointer-events: none !important;
+    z-index: 2 !important;
+}
+
+.contactPage #PageBanner .BannerContent {
+    position: relative !important;
+    left: auto !important;
+    right: auto !important;
+    top: auto !important;
+    bottom: auto !important;
+    margin: 0 !important;
+    width: 100% !important;
+    z-index: 10 !important;
+    display: block !important;
+    padding: 0 15px !important;
+}
+
+.contactPage #PageBanner .BannerContent .container {
+    display: block !important;
+    height: auto !important;
+    padding-left: 24px !important;
+    padding-right: 24px !important;
+}
+
+.contactPage #PageBanner .content-wrapper,
+.contactPage #PageBanner .BannerContent .content-wrapper {
+    padding-bottom: 0 !important;
+    padding-top: 0 !important;
+    max-width: 820px !important;
+    text-align: left !important;
+}
+
+.contactPage #PageBanner .bnrHead {
+    color: #ffffff !important;
+    font-size: clamp(34px, 4.5vw, 54px) !important;
+    font-weight: 700 !important;
+    font-family: "IvyMode", Georgia, serif !important;
+    line-height: 1.2 !important;
+    letter-spacing: -0.5px !important;
+    text-shadow: 0 3px 20px rgba(0, 0, 0, 0.75) !important;
+    margin-bottom: 16px !important;
+}
+
+.contactPage #PageBanner .SubT {
+    color: #f0fdf4 !important;
+    font-size: clamp(15px, 1.5vw, 18px) !important;
+    font-weight: 400 !important;
+    line-height: 1.65 !important;
+    text-shadow: 0 2px 14px rgba(0, 0, 0, 0.85) !important;
+    max-width: 720px !important;
+}
+
+@media (max-width: 991px) {
+    .contactPage #PageBanner,
+    .contactPage #PageBanner.Hght {
+        min-height: 440px !important;
+        padding: 135px 20px 45px !important;
+    }
+    .contactPage #PageBanner .bnnr {
+        object-position: 70% 50% !important;
+    }
+    .contactPage #PageBanner::after {
+        background: linear-gradient(180deg, rgba(4, 22, 13, 0.78) 0%, rgba(4, 22, 13, 0.5) 45%, rgba(4, 22, 13, 0.4) 70%, rgba(4, 22, 13, 0.85) 100%),
+                    linear-gradient(90deg, rgba(4, 22, 13, 0.75) 0%, rgba(4, 22, 13, 0.3) 70%, transparent 100%) !important;
+    }
+    .contactPage #PageBanner .bnrHead {
+        font-size: clamp(28px, 6.8vw, 40px) !important;
+        line-height: 1.25 !important;
+        margin-bottom: 12px !important;
+    }
+    .contactPage #PageBanner .SubT {
+        font-size: 15px !important;
+        line-height: 1.55 !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .contactPage #PageBanner,
+    .contactPage #PageBanner.Hght {
+        min-height: 420px !important;
+        padding: 130px 16px 38px !important;
+    }
+    .contactPage #PageBanner .bnnr {
+        object-position: 68% 45% !important;
+    }
+    .contactPage #PageBanner .bnrHead {
+        font-size: 28px !important;
+    }
+    .contactPage #PageBanner .SubT {
+        font-size: 14px !important;
+    }
+}
+
+/* 2. Contact Section Container */
+.contactPage #ContactSec {
+    position: relative;
+    padding-top: 50px;
+    background: #ffffff;
+}
+
+@media only screen and (min-width: 768px) {
+    .contactPage #ContactSec {
+        padding-top: 80px;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .contactPage #ContactSec {
+        padding-top: 95px;
+    }
+}
+
+/* Info Box / Address Section (.addRsBx) */
+.contactPage #ContactSec .addRsBx {
+    position: relative;
+    margin-bottom: 70px;
+}
+
+@media only screen and (min-width: 992px) {
+    .contactPage #ContactSec .addRsBx {
+        margin-bottom: 100px;
+    }
+}
+
+.contactPage #ContactSec .addRsBx .container {
+    position: relative;
+}
+
+/* Floating Leaf Silhouettes on Address Box */
+.contactPage #ContactSec .addRsBx .container .anim3 {
+    position: absolute !important;
+    top: -35px !important;
+    left: -35px !important;
+    bottom: auto !important;
+    width: 140px !important;
+    max-width: 140px !important;
+    animation: leafFloat1 8s ease-in-out infinite !important;
+    display: block !important;
+    opacity: 0.95 !important;
+    z-index: 10 !important;
+    pointer-events: none !important;
+}
+
+.contactPage #ContactSec .addRsBx .container .anim4 {
+    position: absolute !important;
+    bottom: -30px !important;
+    right: -25px !important;
+    width: 120px !important;
+    max-width: 120px !important;
+    animation: leafFloat2 9s ease-in-out infinite !important;
+    display: block !important;
+    opacity: 0.95 !important;
+    z-index: 10 !important;
+    pointer-events: none !important;
+}
+
+@media only screen and (max-width: 768px) {
+    .contactPage #ContactSec .addRsBx .container .anim3 {
+        max-width: 85px !important;
+        left: -12px !important;
+        top: -18px !important;
+        opacity: 0.85 !important;
+        z-index: 10 !important;
+    }
+    .contactPage #ContactSec .addRsBx .container .anim4 {
+        max-width: 75px !important;
+        right: -8px !important;
+        bottom: -18px !important;
+        opacity: 0.85 !important;
+        z-index: 10 !important;
+    }
+}
+
+/* The DflxBx Layout Container */
+.contactPage #ContactSec .DflxBx {
+    display: flex !important;
+    flex-direction: column !important;
+    position: relative !important;
+    z-index: 2 !important;
+    background: #ffffff !important;
+    box-shadow: 0 16px 50px rgba(14, 105, 55, 0.09) !important;
+    border-radius: 16px !important;
+    border: 1px solid rgba(166, 194, 87, 0.28) !important;
+    overflow: hidden !important;
+    margin: 0 !important;
+}
+
+@media only screen and (min-width: 980px) {
+    .contactPage #ContactSec .DflxBx {
+        flex-direction: row !important;
+        align-items: stretch !important;
+    }
+}
+
+/* Left Title Banner (.hEadBx) */
+.contactPage #ContactSec .DflxBx .hEadBx {
+    background: linear-gradient(145deg, #0e6937 0%, #084c26 100%) !important;
+    position: relative !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 35px 25px !important;
+    overflow: hidden !important;
+    border-radius: 0 !important;
+    height: auto !important;
+    min-height: 100% !important;
+    align-self: stretch !important;
+    margin: 0 !important;
+}
+
+@media only screen and (min-width: 980px) {
+    .contactPage #ContactSec .DflxBx .hEadBx {
+        width: 25% !important;
+        min-width: 230px !important;
+        padding: 50px 30px !important;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .contactPage #ContactSec .DflxBx .hEadBx {
+        width: 23% !important;
+        min-width: 250px !important;
+        padding: 60px 35px !important;
+    }
+}
+
+.contactPage #ContactSec .DflxBx .hEadBx .title {
+    color: #ffffff !important;
+    font-family: "IvyMode", serif !important;
+    font-weight: 500 !important;
+    font-size: 28px !important;
+    line-height: 1.25 !important;
+    position: relative !important;
+    z-index: 2 !important;
+    text-align: center !important;
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.35) !important;
+    letter-spacing: -0.3px !important;
+}
+
+@media only screen and (min-width: 980px) {
+    .contactPage #ContactSec .DflxBx .hEadBx .title {
+        font-size: 34px !important;
+    }
+}
+
+/* Background Watermark Logo inside hEadBx */
+.contactPage #ContactSec .DflxBx .hEadBx .bgIcon {
+    position: absolute !important;
+    inset: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    opacity: 0.16 !important;
+    pointer-events: none !important;
+    z-index: 1 !important;
+    transition: opacity 0.3s ease !important;
+}
+
+.contactPage #ContactSec .DflxBx:hover .hEadBx .bgIcon {
+    opacity: 0.24 !important;
+}
+
+.contactPage #ContactSec .DflxBx .hEadBx .bgIcon img {
+    width: 170px !important;
+    height: 170px !important;
+    max-width: 170px !important;
+    object-fit: contain !important;
+    filter: brightness(0) invert(1) !important;
+    display: block !important;
+}
+
+/* Right Content Area (.riTBx) */
+.contactPage #ContactSec .DflxBx .riTBx {
+    flex: 1 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    background: #ffffff !important;
+    width: 100% !important;
+}
+
+.contactPage #ContactSec .DflxBx .riTBx .item {
+    display: flex !important;
+    flex-direction: column !important;
+    width: 100% !important;
+}
+
+@media only screen and (min-width: 980px) {
+    .contactPage #ContactSec .DflxBx .riTBx .item {
+        flex-direction: row !important;
+        align-items: stretch !important;
+    }
+}
+
+.contactPage #ContactSec .DflxBx .riTBx .item:not(:last-child) {
+    border-bottom: 1px solid rgba(166, 194, 87, 0.22) !important;
+}
+
+/* Individual Info Box (.cmnBx) */
+.contactPage #ContactSec .DflxBx .riTBx .cmnBx {
+    display: flex !important;
+    align-items: flex-start !important;
+    padding: 24px 20px !important;
+    width: 100% !important;
+    flex: 1 1 auto !important;
+    box-sizing: border-box !important;
+    transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    background: #ffffff !important;
+    position: relative !important;
+    border-bottom: 1px solid rgba(166, 194, 87, 0.22) !important;
+}
+
+.contactPage #ContactSec .DflxBx .riTBx .cmnBx:last-child {
+    border-bottom: none !important;
+}
+
+@media only screen and (min-width: 980px) {
+    .contactPage #ContactSec .DflxBx .riTBx .cmnBx {
+        width: 33.3333333333% !important;
+        border-bottom: none !important;
+        border-right: 1px solid rgba(166, 194, 87, 0.22) !important;
+        padding: 28px 22px !important;
+    }
+    .contactPage #ContactSec .DflxBx .riTBx .cmnBx:last-child {
+        border-right: none !important;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .contactPage #ContactSec .DflxBx .riTBx .cmnBx {
+        padding: 34px 28px !important;
+    }
+}
+
+.contactPage #ContactSec .DflxBx .riTBx .cmnBx:hover {
+    background: linear-gradient(145deg, #ffffff 0%, #f4faf6 100%) !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 12px 28px rgba(14, 105, 55, 0.08) !important;
+    z-index: 3 !important;
+}
+
+.contactPage #ContactSec .DflxBx .riTBx .cmnBx .icon,
+#ContactSec .DflxBx .riTBx .cmnBx .icon {
+    width: 44px !important;
+    height: 44px !important;
+    min-width: 44px !important;
+    max-width: 44px !important;
+    max-height: 44px !important;
+    border-radius: 12px !important;
+    background: rgba(14, 105, 55, 0.08) !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    margin-right: 16px !important;
+    margin-top: 2px !important;
+    flex-shrink: 0 !important;
+    transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.contactPage #ContactSec .DflxBx .riTBx .cmnBx:hover .icon {
+    background: #0e6937 !important;
+    transform: scale(1.1) rotate(4deg) !important;
+    box-shadow: 0 6px 16px rgba(14, 105, 55, 0.22) !important;
+}
+
+.contactPage #ContactSec .DflxBx .riTBx .cmnBx .icon svg,
+#ContactSec .DflxBx .riTBx .cmnBx .icon svg {
+    width: 22px !important;
+    height: 22px !important;
+    max-width: 22px !important;
+    max-height: 22px !important;
+    fill: #0e6937 !important;
+    transition: fill 0.3s ease !important;
+    display: block !important;
+}
+
+.contactPage #ContactSec .DflxBx .riTBx .cmnBx:hover .icon svg {
+    fill: #ffffff !important;
+}
+
+.contactPage #ContactSec .DflxBx .riTBx .cmnBx .txtBx {
+    flex: 1 !important;
+}
+
+.contactPage #ContactSec .DflxBx .riTBx .cmnBx .txtBx .label {
+    font-weight: 700 !important;
+    color: #0e6937 !important;
+    text-transform: uppercase !important;
+    margin-bottom: 8px !important;
+    font-size: 13px !important;
+    letter-spacing: 0.5px !important;
+    font-family: "Metropolis", sans-serif !important;
+}
+
+@media only screen and (min-width: 1200px) {
+    .contactPage #ContactSec .DflxBx .riTBx .cmnBx .txtBx .label {
+        font-size: 14px !important;
+    }
+}
+
+.contactPage #ContactSec .DflxBx .riTBx .cmnBx .txtBx p {
+    color: #3b423d !important;
+    font-weight: 450 !important;
+    font-size: 14px !important;
+    line-height: 22px !important;
+    margin-bottom: 0 !important;
+}
+
+.contactPage #ContactSec .DflxBx .riTBx .cmnBx .txtBx p strong {
+    color: #1a251e !important;
+    font-weight: 600 !important;
+    display: inline-block;
+    margin-bottom: 2px;
+}
+
+.contactPage #ContactSec .DflxBx .riTBx .cmnBx .txtBx p em {
+    color: #58685d !important;
+    font-size: 13px !important;
+    display: block;
+    margin-top: 4px;
+    font-style: italic;
+}
+
+.contactPage #ContactSec .DflxBx .riTBx .cmnBx .txtBx a {
+    display: block !important;
+    color: #1a251e !important;
+    font-weight: 500 !important;
+    line-height: 24px !important;
+    font-size: 14px !important;
+    text-decoration: none !important;
+    transition: 0.25s all ease !important;
+    margin-bottom: 4px !important;
+}
+
+.contactPage #ContactSec .DflxBx .riTBx .cmnBx .txtBx a:hover {
+    color: #0e6937 !important;
+}
+
+.contactPage #ContactSec .DflxBx .riTBx .cmnBx .txtBx .ra-phone-link {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    gap: 8px !important;
+    flex-wrap: wrap !important;
+    margin-bottom: 8px !important;
+    text-decoration: none !important;
+    transition: all 0.25s ease !important;
+}
+
+.contactPage #ContactSec .DflxBx .riTBx .cmnBx .txtBx .ra-phone-link:last-child {
+    margin-bottom: 0 !important;
+}
+
+.contactPage #ContactSec .DflxBx .riTBx .cmnBx .txtBx .ra-phone-num {
+    font-weight: 600 !important;
+    color: #1a251e !important;
+    font-size: 14.5px !important;
+    white-space: nowrap !important;
+    transition: color 0.25s ease !important;
+}
+
+.contactPage #ContactSec .DflxBx .riTBx .cmnBx .txtBx .ra-phone-link:hover .ra-phone-num {
+    color: #0e6937 !important;
+}
+
+.contactPage #ContactSec .DflxBx .riTBx .cmnBx .txtBx .badge-tag {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    font-size: 11px !important;
+    line-height: 1.2 !important;
+    padding: 3px 8px !important;
+    background: rgba(14, 105, 55, 0.09) !important;
+    color: #0e6937 !important;
+    border: 1px solid rgba(14, 105, 55, 0.2) !important;
+    border-radius: 5px !important;
+    font-weight: 600 !important;
+    white-space: nowrap !important;
+    vertical-align: middle !important;
+    margin-left: 0 !important;
+    transition: all 0.25s ease !important;
+}
+
+.contactPage #ContactSec .DflxBx .riTBx .cmnBx .txtBx .ra-phone-link:hover .badge-tag {
+    background: #0e6937 !important;
+    color: #ffffff !important;
+    border-color: #0e6937 !important;
+}
+
+.contactPage #ContactSec .DflxBx .riTBx .cmnBx .txtBx .ra-email-link {
+    display: inline-flex !important;
+    align-items: center !important;
+    font-size: 13.5px !important;
+    font-weight: 500 !important;
+    color: #1a251e !important;
+    margin-top: 4px !important;
+    text-decoration: none !important;
+    transition: all 0.25s ease !important;
+}
+
+.contactPage #ContactSec .DflxBx .riTBx .cmnBx .txtBx .ra-email-link:hover {
+    color: #0e6937 !important;
+}
+
+.contactPage #ContactSec .DflxBx .riTBx .cmnBx .txtBx .ra-email-link .sub-email {
+    font-weight: 600 !important;
+    color: #0e6937 !important;
+    transition: all 0.25s ease !important;
+}
+
+.contactPage #ContactSec .DflxBx .riTBx .cmnBx .txtBx .ra-email-link:hover .sub-email {
+    color: #064020 !important;
+    text-decoration: underline !important;
+}
+
+.contactPage #ContactSec .DflxBx .riTBx .cmnBx .txtBx .inline-item-icon {
+    width: 15px !important;
+    height: 15px !important;
+    min-width: 15px !important;
+    fill: #0e6937 !important;
+    margin-right: 6px !important;
+    display: inline-block !important;
+    vertical-align: middle !important;
+    flex-shrink: 0 !important;
+    transition: transform 0.25s ease !important;
+}
+
+.contactPage #ContactSec .DflxBx .riTBx .cmnBx .txtBx .ra-email-link:hover .inline-item-icon {
+    transform: scale(1.15) !important;
+}
+
+.contactPage #ContactSec .DflxBx .riTBx .cmnBx .txtBx .sub-info {
+    display: block !important;
+    font-size: 12.5px !important;
+    color: #4a5c50 !important;
+    margin-top: 6px !important;
+    line-height: 1.4 !important;
+}
+
+.contactPage #ContactSec .DflxBx .riTBx .cmnBx .txtBx .ra-support-line {
+    display: flex !important;
+    align-items: center !important;
+    gap: 2px !important;
+}
+
+.contactPage #ContactSec .DflxBx .riTBx .cmnBx .txtBx .sub-info strong {
+    color: #0e6937 !important;
+    font-weight: 600 !important;
+}
+
+/* 3. Form Section (.formSec - Royal Navy Blue Background matching Home Page) */
+.contactPage #ContactSec .formSec {
+    position: relative;
+    padding: 60px 0 80px;
+    background: linear-gradient(145deg, #021738 0%, #002b70 50%, #0041a6 100%) !important;
+    color: #ffffff;
+    overflow: hidden;
+}
+
+@media only screen and (min-width: 768px) {
+    .contactPage #ContactSec .formSec {
+        padding: 80px 0 95px;
+    }
+}
+
+@media only screen and (min-width: 980px) {
+    .contactPage #ContactSec .formSec {
+        padding: 95px 0 110px;
+    }
+}
+
+.contactPage #ContactSec .formSec .fade1 {
+    position: absolute;
+    right: -100px;
+    bottom: -54px;
+    opacity: 0.08;
+    pointer-events: none;
+}
+
+@media only screen and (max-width: 576px) {
+    .contactPage #ContactSec .formSec .fade1 {
+        max-width: 300px;
+        top: 0;
+    }
+}
+
+.contactPage #ContactSec .formSec .container {
+    position: relative;
+    z-index: 10;
+}
+
+.contactPage #ContactSec .formSec .container .anim9 {
+    right: 2% !important;
+    top: -30px !important;
+    animation: leafFloat1 7.5s ease-in-out infinite !important;
+    display: block !important;
+    opacity: 0.65 !important;
+    position: absolute !important;
+    pointer-events: none !important;
+    z-index: 1 !important;
+    width: 120px !important;
+}
+
+@media only screen and (max-width: 979px) {
+    .contactPage #ContactSec .formSec .container .anim9 {
+        width: 90px !important;
+    }
+}
+
+@media only screen and (max-width: 576px) {
+    .contactPage #ContactSec .formSec .container .anim9 {
+        width: 60px !important;
+        opacity: 0.45 !important;
+    }
+}
+
+.contactPage #ContactSec .formSec .container .anim10 {
+    right: 8% !important;
+    top: -15px !important;
+    animation: leafFloat2 8.5s ease-in-out infinite !important;
+    display: block !important;
+    opacity: 0.55 !important;
+    position: absolute !important;
+    pointer-events: none !important;
+    z-index: 1 !important;
+    width: 100px !important;
+}
+
+@media only screen and (max-width: 979px) {
+    .contactPage #ContactSec .formSec .container .anim10 {
+        width: 80px !important;
+    }
+}
+
+@media only screen and (max-width: 576px) {
+    .contactPage #ContactSec .formSec .container .anim10 {
+        width: 50px !important;
+        opacity: 0.35 !important;
+    }
+}
+
+/* Left Illustration Box with Raju AYUSH Logo Watermark (.bgIcon) */
+.contactPage #ContactSec .formSec .lftBx {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 40px;
+    will-change: transform, opacity;
+}
+
+@media only screen and (min-width: 980px) {
+    .contactPage #ContactSec .formSec .b1 {
+        width: 41.666667% !important;
+        flex: 0 0 41.666667% !important;
+        max-width: 41.666667% !important;
+        margin-bottom: 0 !important;
+    }
+    .contactPage #ContactSec .formSec .b2 {
+        width: 58.333333% !important;
+        flex: 0 0 58.333333% !important;
+        max-width: 58.333333% !important;
+    }
+    .contactPage #ContactSec .formSec .lftBx {
+        margin-bottom: 0;
+    }
+}
+
+.contactPage #ContactSec .formSec .lftBx .imgBx {
+    position: relative;
+    max-width: 420px;
+    width: 100%;
+    border-radius: 0;
+    box-shadow: none;
+    overflow: visible;
+}
+
+.contactPage #ContactSec .formSec .lftBx .imgBx .ltImg {
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.2s ease-out;
+}
+
+.contactPage #ContactSec .formSec .lftBx .imgBx .bgIcon {
+    max-width: 520px;
+    width: 130%;
+    opacity: 0.18;
+    position: absolute;
+    top: -55px;
+    right: -50px;
+    z-index: 1;
+    pointer-events: none;
+    transition: transform 0.4s ease, opacity 0.4s ease;
+}
+
+@media (max-width: 992px) {
+    .contactPage #ContactSec .formSec .lftBx .imgBx .bgIcon {
+        max-width: 420px;
+        top: -35px;
+        right: -30px;
+    }
+}
+
+@media (max-width: 576px) {
+    .contactPage #ContactSec .formSec .lftBx .imgBx .bgIcon {
+        max-width: 300px;
+        top: -20px;
+        right: -15px;
+    }
+}
+
+.contactPage #ContactSec .formSec .lftBx .imgBx .bgIcon img {
+    width: 100%;
+    height: auto;
+    filter: brightness(0) invert(1);
+}
+
+/* Right Form Box (.ritBx) */
+.contactPage #ContactSec .formSec .ritBx {
+    position: relative;
+    z-index: 10;
+    will-change: transform, opacity;
+}
+
+.contactPage #ContactSec .formSec .ritBx .ayur-cmn-head,
+.contactPage #ContactSec .formSec .ritBx .MainT {
+    color: #ffffff !important;
+    font-weight: 500;
+    font-family: "IvyMode", serif;
+    line-height: 1.25;
+    font-size: 28px;
+    margin-bottom: 25px;
+}
+
+@media only screen and (min-width: 768px) {
+    .contactPage #ContactSec .formSec .ritBx .ayur-cmn-head,
+    .contactPage #ContactSec .formSec .ritBx .MainT {
+        font-size: 36px;
+        margin-bottom: 32px;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .contactPage #ContactSec .formSec .ritBx .ayur-cmn-head,
+    .contactPage #ContactSec .formSec .ritBx .MainT {
+        font-size: 42px;
+        margin-bottom: 38px;
+    }
+}
+
+.contactPage #ContactSec .formSec .ritBx .form-row {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -12px;
+}
+
+.contactPage #ContactSec .formSec .ritBx .form-col-6 {
+    width: 100%;
+    padding: 0 12px;
+    margin-bottom: 16px;
+}
+
+@media only screen and (min-width: 576px) {
+    .contactPage #ContactSec .formSec .ritBx .form-col-6 {
+        width: 50%;
+    }
+}
+
+.contactPage #ContactSec .formSec .ritBx .form-col-12 {
+    width: 100%;
+    padding: 0 12px;
+    margin-bottom: 16px;
+}
+
+.contactPage #ContactSec .formSec .ritBx .form-group {
+    position: relative;
+    width: 100%;
+    margin-bottom: 0;
+}
+
+/* Minimalist White Underline Inputs matching Home Page */
+.contactPage #ContactSec .formSec .ritBx .form-control {
+    display: block;
+    width: 100%;
+    font-family: "Metropolis", sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    color: #ffffff !important;
+    background: transparent !important;
+    border: none !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.85) !important;
+    border-radius: 0 !important;
+    padding: 8px 0 !important;
+    height: 48px !important;
+    outline: none !important;
+    box-shadow: none !important;
+    transition: border-color 0.3s ease;
+}
+
+@media (min-width: 768px) {
+    .contactPage #ContactSec .formSec .ritBx .form-control {
+        font-size: 15.5px !important;
+        height: 52px !important;
+    }
+}
+
+.contactPage #ContactSec .formSec .ritBx .form-control:focus {
+    border-bottom-color: #60a5fa !important;
+}
+
+.contactPage #ContactSec .formSec .ritBx .form-control::placeholder {
+    color: rgba(255, 255, 255, 0.88) !important;
+    font-weight: 400 !important;
+}
+
+.contactPage #ContactSec .formSec .ritBx textarea.form-control {
+    min-height: 60px !important;
+    height: auto !important;
+    padding-top: 14px !important;
+    resize: vertical !important;
+}
+
+.contactPage #ContactSec .formSec .ritBx select.form-control {
+    cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E") !important;
+    background-repeat: no-repeat !important;
+    background-position: right 4px center !important;
+    background-size: 16px !important;
+    padding-right: 28px !important;
+}
+
+.contactPage #ContactSec .formSec .ritBx select.form-control option {
+    background-color: #002b70;
+    color: #ffffff;
+}
+
+.contactPage #ContactSec .formSec .ritBx input[type="date"]::-webkit-calendar-picker-indicator,
+.contactPage #ContactSec .formSec .ritBx input[type="time"]::-webkit-calendar-picker-indicator {
+    filter: invert(1) !important;
+    cursor: pointer;
+    opacity: 0.85;
+}
+
+.contactPage #ContactSec .formSec .ritBx .getApnt,
+.contactPage #ContactSec .formSec .ritBx .send {
+    background: #0041A6;
+    border-radius: 5px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    color: #ffffff;
+    font-family: "Metropolis", sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: 0.3px;
+    padding: 13px 34px;
+    margin-top: 14px;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 6px 20px rgba(0, 65, 166, 0.3);
+    position: relative;
+    overflow: hidden;
+    transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    z-index: 1;
+    text-decoration: none;
+}
+
+@media (min-width: 768px) {
+    .contactPage #ContactSec .formSec .ritBx .getApnt,
+    .contactPage #ContactSec .formSec .ritBx .send {
+        font-size: 15.5px;
+        padding: 15px 40px;
+    }
+}
+
+.contactPage #ContactSec .formSec .ritBx .getApnt span,
+.contactPage #ContactSec .formSec .ritBx .send span {
+    position: relative;
+    z-index: 2;
+    display: inline-flex;
+    align-items: center;
+}
+
+.contactPage #ContactSec .formSec .ritBx .getApnt .ra-btn-arrow {
+    display: inline-flex;
+    align-items: center;
+    transition: transform 0.3s ease;
+    position: relative;
+    z-index: 2;
+}
+
+.contactPage #ContactSec .formSec .ritBx .getApnt .ra-btn-arrow svg {
+    width: 18px;
+    height: 18px;
+    stroke: currentColor;
+}
+
+.contactPage #ContactSec .formSec .ritBx .getApnt:hover,
+.contactPage #ContactSec .formSec .ritBx .send:hover {
+    background: #003080;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(0, 65, 166, 0.45);
+}
+
+.contactPage #ContactSec .formSec .ritBx .getApnt:hover .ra-btn-arrow {
+    transform: translateX(4px);
+}
+
+.contactPage #ContactSec .formSec .ritBx .bookemsg {
+    margin-top: 15px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.contactPage #ContactSec .formSec .ritBx .bookemsg.success {
+    color: #a6c257 !important;
+    background: transparent;
+    border: none;
+    padding: 0;
+}
+
+/* 4. Location Map Section (#mapSec) */
+.contactPage #mapSec {
+    position: relative !important;
+    padding: 60px 0 90px !important;
+    background: #ffffff !important;
+    overflow: hidden !important;
+}
+
+@media only screen and (min-width: 992px) {
+    .contactPage #mapSec {
+        padding: 80px 0 110px !important;
+    }
+}
+
+.contactPage #mapSec .MainT {
+    color: #0e6937 !important;
+    font-weight: 500 !important;
+    font-family: "IvyMode", serif !important;
+    line-height: 1.25 !important;
+    font-size: 28px !important;
+    margin-bottom: 25px !important;
+    text-align: center !important;
+}
+
+@media only screen and (min-width: 768px) {
+    .contactPage #mapSec .MainT {
+        margin-bottom: 35px !important;
+        font-size: 34px !important;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .contactPage #mapSec .MainT {
+        font-size: 40px !important;
+    }
+}
+
+.contactPage #mapSec .mapOtBx {
+    position: relative !important;
+    border-radius: 16px !important;
+    overflow: hidden !important;
+}
+
+.contactPage #mapSec .mapOtBx .mapBx {
+    width: 100% !important;
+    height: 360px !important;
+    border-radius: 16px !important;
+    overflow: hidden !important;
+    box-shadow: 0 14px 40px rgba(0, 0, 0, 0.09) !important;
+    position: relative !important;
+    z-index: 2 !important;
+    border: 1px solid rgba(166, 194, 87, 0.25) !important;
+}
+
+@media only screen and (min-width: 768px) {
+    .contactPage #mapSec .mapOtBx .mapBx {
+        height: 440px !important;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .contactPage #mapSec .mapOtBx .mapBx {
+        height: 500px !important;
+    }
+}

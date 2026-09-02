@@ -1,0 +1,359 @@
+/* ==========================================================================
+   RAJU AYUSH HOSPITAL - SPECIALTY FEATURE CARDS, BENEFITS & CTA STYLES
+   ========================================================================== */
+
+/* --- 1. Signature Feature Cards (3-Grid with Notched Corner) --- */
+.ra-specialty-features-wrap {
+  margin: 38px 0 42px 0;
+}
+
+.ra-section-subtitle {
+  font-size: 12.5px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #00A859;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.ra-section-main-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: #181A17;
+  margin-bottom: 22px;
+  line-height: 1.3;
+}
+
+.ra-feature-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.ra-notched-card-container {
+  filter: drop-shadow(0 8px 18px rgba(39, 95, 73, 0.08));
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), filter 0.4s ease;
+}
+
+.ra-notched-card-container:hover {
+  transform: translateY(-8px);
+  filter: drop-shadow(0 16px 28px rgba(39, 95, 73, 0.16));
+}
+
+.ra-notched-card {
+  position: relative;
+  background: #ffffff;
+  padding: 30px 24px 26px 24px;
+  border-radius: 28px 28px 0 28px;
+  /* Notched cut on bottom-right corner */
+  clip-path: polygon(9.202% 0%,90.798% 0%,90.798% 0%,92.289% .11%,93.705% .429%,95.025% .939%,96.231% 1.622%,97.303% 2.463%,98.223% 3.442%,98.972% 4.543%,99.531% 5.748%,99.879% 7.041%,100% 8.403%,100% 69.468%,100% 69.468%,99.633% 73.178%,98.616% 75.937%,97.076% 77.918%,95.14% 79.293%,92.934% 80.235%,90.585% 80.917%,88.221% 81.511%,85.967% 82.19%,83.95% 83.128%,82.298% 84.496%,82.298% 84.496%,81.047% 86.306%,80.14% 88.282%,79.405% 90.341%,78.671% 92.399%,77.767% 94.371%,76.523% 96.173%,74.767% 97.721%,72.33% 98.931%,69.039% 99.719%,64.724% 100%,9.202% 100%,9.202% 100%,7.711% 99.89%,6.295% 99.571%,4.975% 99.061%,3.769% 98.378%,2.697% 97.538%,1.777% 96.558%,1.028% 95.457%,.469% 94.252%,.121% 92.959%,0% 91.597%,0% 8.403%,0% 8.403%,.121% 7.041%,.469% 5.748%,1.028% 4.543%,1.777% 3.442%,2.697% 2.463%,3.769% 1.622%,4.975% .939%,6.295% .429%,7.711% .11%,9.202% 0%);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 195px;
+  border: 1px solid rgba(39, 95, 73, 0.08);
+}
+
+.ra-card-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #1a2e26;
+  line-height: 1.35;
+  margin: 0 0 8px 0;
+}
+
+.ra-card-desc {
+  font-size: 13px;
+  color: #5d6d66;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.ra-card-icon-wrap {
+  margin-top: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.ra-card-icon-svg {
+  width: 56px;
+  height: 56px;
+  stroke: #00A859;
+  stroke-width: 1.8;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  transition: stroke 0.3s ease, transform 0.3s ease;
+}
+
+.ra-notched-card-container:hover .ra-card-icon-svg {
+  stroke: #275F49;
+  transform: scale(1.06);
+}
+
+/* --- 2. Two-Column Benefits Section --- */
+.ra-benefits-section {
+  background: #f7faf8;
+  border-radius: 24px;
+  padding: 34px 30px;
+  margin: 38px 0 42px 0;
+  border: 1px solid rgba(39, 95, 73, 0.08);
+}
+
+.ra-benefits-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.25fr;
+  gap: 32px;
+  align-items: center;
+}
+
+.ra-benefits-img-wrap {
+  position: relative;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  aspect-ratio: 4 / 3;
+}
+
+.ra-benefits-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s ease;
+}
+
+.ra-benefits-img-wrap:hover .ra-benefits-img {
+  transform: scale(1.04);
+}
+
+.ra-benefits-content h3 {
+  font-size: 23px;
+  font-weight: 700;
+  color: #1a2e26;
+  margin-bottom: 16px;
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.ra-benefits-content h3::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 45px;
+  height: 3px;
+  background: #00A859;
+  border-radius: 2px;
+}
+
+.ra-benefits-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+}
+
+.ra-benefits-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 14.5px;
+  color: #2c3e35;
+  line-height: 1.5;
+}
+
+.ra-benefit-check-icon {
+  width: 22px;
+  height: 22px;
+  flex-shrink: 0;
+  background: #e6f7ef;
+  color: #00A859;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1px;
+}
+
+.ra-benefit-check-icon svg {
+  width: 13px;
+  height: 13px;
+  stroke: #00A859;
+  stroke-width: 2.5;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* --- 3. High-Converting Specialty CTA Banner --- */
+.ra-specialty-cta-banner {
+  background: linear-gradient(135deg, #184131 0%, #275F49 60%, #1e4d3b 100%);
+  border-radius: 22px;
+  padding: 34px 34px;
+  color: #ffffff;
+  margin-top: 38px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 16px 36px rgba(24, 65, 49, 0.22);
+}
+
+.ra-specialty-cta-banner::before {
+  content: '';
+  position: absolute;
+  top: -50px;
+  right: -50px;
+  width: 190px;
+  height: 190px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.05);
+  pointer-events: none;
+}
+
+.ra-specialty-cta-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 22px;
+  position: relative;
+  z-index: 1;
+}
+
+.ra-cta-text-col {
+  flex: 1 1 380px;
+}
+
+.ra-cta-badge {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  background: rgba(255, 255, 255, 0.15);
+  padding: 4px 12px;
+  border-radius: 20px;
+  color: #c9f5dd;
+  margin-bottom: 8px;
+}
+
+.ra-cta-title {
+  font-size: 23px;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 8px 0;
+  line-height: 1.3;
+}
+
+.ra-cta-desc {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.88);
+  margin: 0;
+  line-height: 1.5;
+}
+
+.ra-cta-actions-col {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.ra-cta-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: #0041A6;
+  color: #ffffff !important;
+  font-size: 13.5px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  padding: 13px 24px;
+  border-radius: 30px;
+  text-decoration: none !important;
+  box-shadow: 0 6px 18px rgba(0, 65, 166, 0.35);
+  transition: all 0.3s ease;
+}
+
+.ra-cta-btn-primary:hover {
+  background: #003080;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(0, 65, 166, 0.45);
+  color: #ffffff !important;
+}
+
+.ra-cta-arrow-circle {
+  width: 24px;
+  height: 24px;
+  background: rgba(255, 255, 255, 0.25);
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  transition: transform 0.3s ease;
+}
+
+.ra-cta-btn-primary:hover .ra-cta-arrow-circle {
+  transform: translateX(3px);
+}
+
+.ra-cta-btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.12);
+  color: #ffffff !important;
+  font-size: 13.5px;
+  font-weight: 600;
+  padding: 13px 20px;
+  border-radius: 30px;
+  text-decoration: none !important;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  transition: all 0.3s ease;
+}
+
+.ra-cta-btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.22);
+  border-color: rgba(255, 255, 255, 0.5);
+  transform: translateY(-2px);
+  color: #ffffff !important;
+}
+
+/* Responsive */
+@media (max-width: 991px) {
+  .ra-feature-cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .ra-benefits-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .ra-benefits-img-wrap {
+    max-height: 280px;
+  }
+}
+
+@media (max-width: 640px) {
+  .ra-feature-cards-grid {
+    grid-template-columns: 1fr;
+  }
+  .ra-benefits-section {
+    padding: 24px 18px;
+  }
+  .ra-specialty-cta-banner {
+    padding: 26px 18px;
+  }
+  .ra-cta-actions-col {
+    width: 100%;
+  }
+  .ra-cta-btn-primary, .ra-cta-btn-secondary {
+    width: 100%;
+    justify-content: center;
+  }
+}

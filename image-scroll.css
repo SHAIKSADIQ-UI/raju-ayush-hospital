@@ -1,0 +1,78 @@
+/* ============================================================
+   FULL-WIDTH IMAGE SECTION - Horizontal Scroll Effect
+   Section: #comp-ml7z68t8
+   Background image with GSAP scroll-driven left-to-right movement
+   ============================================================ */
+
+/* --- Section Container --- */
+#comp-ml7z68t8 {
+  position: relative !important;
+  overflow: hidden !important;
+  min-height: 500px !important;
+  height: 669px !important;
+  width: 100% !important;
+}
+
+/* --- Internal Container Root --- */
+#comp-ml7z68ta {
+  position: relative !important;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+/* --- Background Layer --- */
+#comp-ml7z68t8 ._backgroundLayer_ikbgu_25 {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  overflow: hidden !important;
+  z-index: 0 !important;
+}
+
+/* --- Background with image --- */
+#comp-ml7z68ta3 {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  overflow: hidden !important;
+}
+
+/* --- Media container (GSAP horizontal scroll target) --- */
+#comp-ml7z68t8 ._media_x7ip3_25 {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 130% !important;  /* Make wider than container for horizontal scroll space */
+  height: 100% !important;
+  will-change: transform;
+}
+
+/* --- Background Image --- */
+#bgImg_comp-ml7z68ta3,
+#bgImg_comp-ml7z68ta3 img {
+  position: absolute !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: 45.8% 39.7% !important;  /* Match Wix focal point */
+}
+
+/* --- Responsive --- */
+@media (max-width: 991px) {
+  #comp-ml7z68t8 {
+    min-height: 350px !important;
+    height: 450px !important;
+  }
+}
+
+@media (max-width: 600px) {
+  #comp-ml7z68t8 {
+    min-height: 250px !important;
+    height: 300px !important;
+  }
+
+  #comp-ml7z68t8 ._media_x7ip3_25 {
+    width: 150% !important;  /* More room on mobile */
+  }
+}

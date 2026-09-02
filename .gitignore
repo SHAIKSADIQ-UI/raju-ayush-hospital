@@ -1,0 +1,9 @@
+# Dependencies & Build artifacts
+node_modules/
+scratch/
+test-results/
+.system_generated/
+.tempmediaStorage/
+
+# Large deployment zips (can be rebuilt anytime)
+*.zip
